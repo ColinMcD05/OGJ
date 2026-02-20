@@ -16,37 +16,45 @@ public class EnemyMovement : MonoBehaviour
     private int moveDirection = 1;
     public int rotationSpeed = 5;
     private Vector3 lastKnown;
-    private float lookTime = 1;
+    private float lookTime = 0;
     private bool stunned;
+    private bool canMove;
+    private int lookDirection = 0;
+    private Quaternion lookRotation;
 
     [HideInInspector] public bool sawPlayer;
     [HideInInspector] public bool seePlayer;
 
     void Awake()
     {
+        canMove = true;
         player = GameObject.Find("Player");
     }
 
     private void Update()
     {
-        if (!sawPlayer && !stunned)
+        if (canMove && !stunned)
         {
-            Patrol();
-        }
-        else if (sawPlayer && seePlayer)
-        {
-            ChasePlayer();
-            lookTime = 0;
-        }
-        else if (sawPlayer && !seePlayer)
-        {
-            if (!AtLastKnown())
+            if (!sawPlayer)
             {
-                GoToLastKnown();
+                Patrol();
             }
-            else
+            else if (sawPlayer && seePlayer)
             {
-                LookForPlayer();
+                ChasePlayer();
+                lookTime = 0;
+            }
+            else if (sawPlayer && !seePlayer)
+            {
+                if (!AtLastKnown())
+                {
+                    GoToLastKnown();
+                    lookRotation = transform.rotation * Quaternion.Euler(0, 0, 30);
+                }
+                else
+                {
+                    LookForPlayer();
+                }
             }
         }
     }
@@ -90,7 +98,15 @@ public class EnemyMovement : MonoBehaviour
         lookTime += Time.deltaTime;
         if (lookTime >= 1)
         {
+            if (transform.rotation != lookRotation)
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, rotationSpeed * Time.deltaTime);
+            }
+            else
+            {
 
+                lookRotation *= Quaternion.Euler(0,0,15);
+            }
         }
         if (lookTime >= 5)
         {
@@ -122,5 +138,21 @@ public class EnemyMovement : MonoBehaviour
     bool AtLastKnown()
     {
         return transform.position == lastKnown;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            canMove = false;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            canMove = true;
+        }
     }
 }
