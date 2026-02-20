@@ -3,6 +3,8 @@ using UnityEngine.UIElements;
 
 public class EnemyVision : MonoBehaviour
 {
+    [SerializeField] EnemyMovement enemyMovement;
+
     LayerMask layerMask;
     GameObject player;
     public float visionRange = 10;
@@ -16,19 +18,18 @@ public class EnemyVision : MonoBehaviour
 
     void Update()
     {
-        if (this.gameObject.CompareTag("Dark Elf"))
+        if (CheckInAngle() && CheckIsNotHidden())
         {
-            if (CheckInAngle() && CheckIsNotHidden())
+            if(!this.gameObject.CompareTag("Dark Elf") && CheckPlayerInShadow())
             {
-                Debug.Log("You're Caught!");
+                enemyMovement.seePlayer = false;
+                return;
             }
+            enemyMovement.sawPlayer = true;
         }
         else
         {
-            if (CheckInAngle() && CheckIsNotHidden() && CheckPlayerInShadow())
-            {
-                Debug.Log("You're Caught!");
-            }
+            enemyMovement.seePlayer = false;
         }
         // Debug.Log(CheckIsNotHidden());
     }

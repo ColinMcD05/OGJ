@@ -54,8 +54,5 @@ public class PlayerMovement : MonoBehaviour
             sprintTimer -= Time.deltaTime;
             playerSpeed += 2;
         }
-        {
-
-        }
     }
 }
