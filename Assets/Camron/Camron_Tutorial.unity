@@ -119,6 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< Updated upstream
 --- !u!1001 &326136359
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -272,6 +273,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7654489093977032034, guid: 56dd824538d44da44ada48321440946e, type: 3}
   m_PrefabInstance: {fileID: 326136359}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1658650934
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,6 +372,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+<<<<<<< Updated upstream
 --- !u!1 &1770836806
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,6 +418,8 @@ Transform:
   - {fileID: 2091347744}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1899719095
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,7 +431,10 @@ GameObject:
   - component: {fileID: 1899719098}
   - component: {fileID: 1899719097}
   - component: {fileID: 1899719096}
+<<<<<<< Updated upstream
   - component: {fileID: 1899719099}
+=======
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -507,6 +516,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!114 &1899719099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2175,12 +2185,17 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+=======
+>>>>>>> Stashed changes
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1899719098}
   - {fileID: 1658650936}
+<<<<<<< Updated upstream
   - {fileID: 1770836808}
   - {fileID: 326136359}
   - {fileID: 688307023}
+=======
+>>>>>>> Stashed changes
