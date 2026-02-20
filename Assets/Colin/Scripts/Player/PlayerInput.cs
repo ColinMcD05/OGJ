@@ -8,8 +8,9 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private InputActionReference moveAction;
     [SerializeField] private InputActionReference attackAction;
     [SerializeField] private InputActionReference sprintAction;
+    [SerializeField] private InputActionReference pickUpAction;
 
-    void Awake()
+    void OnEnable()
     {
         moveAction.action.performed += OnMovePerformed;
         moveAction.action.canceled += OnMoveCanceled;
@@ -18,6 +19,17 @@ public class PlayerInput : MonoBehaviour
 
         attackAction.action.performed += OnAttackPerformed;
         attackAction.action.canceled += OnAttackCanceled;
+    }
+
+    void OnDisable()
+    {
+        moveAction.action.performed -= OnMovePerformed;
+        moveAction.action.canceled -= OnMoveCanceled;
+
+        sprintAction.action.performed -= OnSprintPerformed;
+
+        attackAction.action.performed -= OnAttackPerformed;
+        attackAction.action.canceled -= OnAttackCanceled;
     }
 
     private void OnMovePerformed(InputAction.CallbackContext context)
