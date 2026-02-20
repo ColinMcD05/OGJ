@@ -53,7 +53,11 @@ public class EnemyMovement : MonoBehaviour
         {
             if (currentWaypointTarget == waypoints.Length - 1)
             {
-                moveDirection *= -1;
+                moveDirection = -1;
+            }
+            else if (currentWaypointTarget == 0)
+            {
+                moveDirection = 1;
             }
             currentWaypointTarget = (currentWaypointTarget + 1 * moveDirection);
             waitTime = Random.Range(1f, 3f);
