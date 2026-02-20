@@ -15,14 +15,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (inControl)
         {
-            GetInput();
             Movement();
         }
     }
 
-    void GetInput()
+    public void GetInput(Vector2 movement)
     {
-        playerMovement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        playerMovement = movement;
     }
 
     void Movement()
