@@ -14,6 +14,7 @@ public class EnemyMovement : MonoBehaviour
     public float waitTime = 3;
     private int moveDirection = 1;
     public int rotationSpeed = 5;
+    private Vector3 lastKnown;
 
     [HideInInspector] public bool sawPlayer;
     [HideInInspector] public bool seePlayer;
@@ -35,6 +36,10 @@ public class EnemyMovement : MonoBehaviour
         }
         else if (sawPlayer && !seePlayer)
         {
+            if (AtLastKnown())
+            {
+                GoToLastKnown();
+            }
             LookForPlayer();
         }
     }
@@ -69,12 +74,12 @@ public class EnemyMovement : MonoBehaviour
                 moveDirection = 1;
             }
             currentWaypointTarget = (currentWaypointTarget + 1 * moveDirection);
-            waitTime = Random.Range(1f, 3f);
         }
     }
 
     void LookForPlayer()
     {
+
     }
 
     void ChasePlayer()
@@ -85,5 +90,16 @@ public class EnemyMovement : MonoBehaviour
         eyes.transform.rotation = Quaternion.Slerp(eyes.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
         transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+        lastKnown = target.position;
+    }
+
+    void GoToLastKnown()
+    {
+
+    }
+
+    bool AtLastKnown()
+    {
+        return transform.position == lastKnown;
     }
 }
