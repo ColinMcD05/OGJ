@@ -4,8 +4,15 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] SpriteRenderer spriteRenderer;
 
-    public Vector2 playerMovement;
-    public bool inControl;
+    // Variables not subject to change, but need to be called upon
+    [HideInInspector] public Vector2 playerMovement;
+    [HideInInspector] public bool inControl;
+    [HideInInspector] public bool isSprinting;
+    public float sprintTimer;
+
+    // Variables subject to change in inspector
+    public float walkSpeed;
+    public float sprintSpeed;
     public float playerSpeed;
 
     void Start()
@@ -40,15 +47,12 @@ public class PlayerMovement : MonoBehaviour
         */
     }
 
-    public void Sprint()
+    void Sprint(bool isSprinting)
     {
-        if (playerSpeed == 5)
+        if (isSprinting && sprintTimer > 0)
         {
-            playerSpeed = 7;
-        }
-        else
-        {
-            playerSpeed = 5;
+            sprintTimer -= Time.deltaTime;
+            playerSpeed += 2;
         }
     }
 }

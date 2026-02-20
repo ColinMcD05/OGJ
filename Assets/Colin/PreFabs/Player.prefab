@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: -5514251185424170730}
   - component: {fileID: 3455220854803920161}
   - component: {fileID: 507997996438629822}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 236a3649590baa34aaeba07356a417e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  spriteRenderer: {fileID: 7590500270667343578}
   playerMovement: {x: 0, y: 0}
   inControl: 0
   playerSpeed: 5
@@ -123,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   lives: 0
+  inventory: []
 --- !u!114 &3455220854803920161
 MonoBehaviour:
   m_ObjectHideFlags: 0
