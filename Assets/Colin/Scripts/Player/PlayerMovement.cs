@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] Rigidbody2D playerRigidbody;
 
     // Variables not subject to change, but need to be called upon
     [HideInInspector] public Vector2 playerMovement;
