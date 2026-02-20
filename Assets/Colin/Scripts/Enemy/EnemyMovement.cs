@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -12,6 +13,7 @@ public class EnemyMovement : MonoBehaviour
     public float reachDistance = 0.1f;
     public float waitTime = 3;
     private int moveDirection = 1;
+    public int rotationSpeed = 5;
 
     [HideInInspector] public bool sawPlayer;
     [HideInInspector] public bool seePlayer;
@@ -48,8 +50,12 @@ public class EnemyMovement : MonoBehaviour
 
         Transform target = waypoints[currentWaypointTarget];
 
-        Quaternion targetRotation = Quaternion.LookRotation(transform.forward, (target.position - transform.position));
-        eyes.transform.rotation = targetRotation;
+        Vector3 direction = (target.position - transform.position).normalized;
+        if (direction != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(transform.forward, direction);
+            eyes.transform.rotation = targetRotation;
+        }
 
         transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
         if ((transform.position - target.position).sqrMagnitude < reachDistance * reachDistance)
@@ -69,11 +75,15 @@ public class EnemyMovement : MonoBehaviour
 
     void LookForPlayer()
     {
-        Transform target = player.transform;
     }
 
     void ChasePlayer()
     {
+        Transform target = player.transform;
 
+        Quaternion targetRotation = Quaternion.LookRotation(transform.forward, (target.position - transform.position));
+        eyes.transform.rotation = Quaternion.Slerp(eyes.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
+        transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
     }
 }
