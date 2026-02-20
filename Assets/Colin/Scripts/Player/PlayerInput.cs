@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,9 +19,6 @@ public class PlayerInput : MonoBehaviour
 
         attackAction.action.performed += OnAttackPerformed;
         attackAction.action.canceled += OnAttackCanceled;
-
-        pickUpAction.action.performed += OnPickUpPerformed;
-        pickUpAction.action.canceled += OnPickUpCanceled;
     }
 
     void OnDisable()
@@ -34,9 +30,6 @@ public class PlayerInput : MonoBehaviour
 
         attackAction.action.performed -= OnAttackPerformed;
         attackAction.action.canceled -= OnAttackCanceled;
-
-        pickUpAction.action.performed -= OnPickUpPerformed;
-        pickUpAction.action.canceled -= OnPickUpCanceled;
     }
 
     private void OnMovePerformed(InputAction.CallbackContext context)
@@ -63,15 +56,5 @@ public class PlayerInput : MonoBehaviour
     private void OnAttackCanceled(InputAction.CallbackContext context)
     {
         Debug.Log("No Attack!");
-    }
-
-    void OnPickUpPerformed(InputAction.CallbackContext context)
-    {
-        Debug.Log("Picked Start");
-    }
-
-    void OnPickUpCanceled(InputAction.CallbackContext context)
-    {
-        Debug.Log("Picked End");
     }
 }
