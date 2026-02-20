@@ -3,7 +3,6 @@ using UnityEngine.UIElements;
 
 public class EnemyVision : MonoBehaviour
 {
-    LayerMask layerMask;
 
     GameObject player;
     public float visionRange = 10;
@@ -11,7 +10,6 @@ public class EnemyVision : MonoBehaviour
 
     void Awake()
     {
-        layerMask = LayerMask.GetMask("Player", "Walls");
         player = GameObject.Find("Player");
     }
 
@@ -21,7 +19,7 @@ public class EnemyVision : MonoBehaviour
         {
             Debug.Log("You're Caught!");
         }
-        Debug.Log(CheckIsNotHidden());
+        // Debug.Log(CheckIsNotHidden());
     }
 
     bool CheckInAngle()
