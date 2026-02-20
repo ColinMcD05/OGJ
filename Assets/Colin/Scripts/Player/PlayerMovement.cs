@@ -6,15 +6,22 @@ public class PlayerMovement : MonoBehaviour
     public bool inControl;
     public float playerSpeed;
 
-    void Update()
+    void Start()
     {
-        GetInput();
-        Movement();
+        inControl = true;
     }
 
-    void GetInput()
+    void Update()
     {
-        playerMovement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        if (inControl)
+        {
+            Movement();
+        }
+    }
+
+    public void GetInput(Vector2 movement)
+    {
+        playerMovement = movement;
     }
 
     void Movement()
