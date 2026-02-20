@@ -56,14 +56,4 @@ public class PlayerInput : MonoBehaviour
     {
         Debug.Log("No Attack!");
     }
-
-    void OnPickUpPerformed(InputAction.CallbackContext context)
-    {
-        Debug.Log("Picked Start");
-    }
-
-    void OnPickUpCanceled(InputAction.CallbackContext context)
-    {
-        Debug.Log("Picked End");
-    }
 }
