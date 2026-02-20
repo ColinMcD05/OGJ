@@ -18,35 +18,40 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 lastKnown;
     private float lookTime = 1;
     private bool stunned;
+    private bool canMove;
 
     [HideInInspector] public bool sawPlayer;
     [HideInInspector] public bool seePlayer;
 
     void Awake()
     {
+        canMove = true;
         player = GameObject.Find("Player");
     }
 
     private void Update()
     {
-        if (!sawPlayer && !stunned)
+        if (canMove && !stunned)
         {
-            Patrol();
-        }
-        else if (sawPlayer && seePlayer)
-        {
-            ChasePlayer();
-            lookTime = 0;
-        }
-        else if (sawPlayer && !seePlayer)
-        {
-            if (!AtLastKnown())
+            if (!sawPlayer)
             {
-                GoToLastKnown();
+                Patrol();
             }
-            else
+            else if (sawPlayer && seePlayer)
             {
-                LookForPlayer();
+                ChasePlayer();
+                lookTime = 0;
+            }
+            else if (sawPlayer && !seePlayer)
+            {
+                if (!AtLastKnown())
+                {
+                    GoToLastKnown();
+                }
+                else
+                {
+                    LookForPlayer();
+                }
             }
         }
     }
@@ -122,5 +127,21 @@ public class EnemyMovement : MonoBehaviour
     bool AtLastKnown()
     {
         return transform.position == lastKnown;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            canMove = false;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            canMove = true;
+        }
     }
 }
