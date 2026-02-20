@@ -16,9 +16,11 @@ public class EnemyMovement : MonoBehaviour
     private int moveDirection = 1;
     public int rotationSpeed = 5;
     private Vector3 lastKnown;
-    private float lookTime = 1;
+    private float lookTime = 0;
     private bool stunned;
     private bool canMove;
+    private int lookDirection = 0;
+    private Quaternion lookRotation;
 
     [HideInInspector] public bool sawPlayer;
     [HideInInspector] public bool seePlayer;
@@ -47,6 +49,7 @@ public class EnemyMovement : MonoBehaviour
                 if (!AtLastKnown())
                 {
                     GoToLastKnown();
+                    lookRotation = transform.rotation * Quaternion.Euler(0, 0, 30);
                 }
                 else
                 {
@@ -95,7 +98,15 @@ public class EnemyMovement : MonoBehaviour
         lookTime += Time.deltaTime;
         if (lookTime >= 1)
         {
+            if (transform.rotation != lookRotation)
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, rotationSpeed * Time.deltaTime);
+            }
+            else
+            {
 
+                lookRotation *= Quaternion.Euler(0,0,15);
+            }
         }
         if (lookTime >= 5)
         {
