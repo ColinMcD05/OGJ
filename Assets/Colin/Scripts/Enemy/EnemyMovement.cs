@@ -19,7 +19,7 @@ public class EnemyMovement : MonoBehaviour
     private float lookTime = 0;
     private bool stunned;
     private bool canMove;
-    private int lookDirection = 0;
+    private int lookDirection = 1;
     private Quaternion lookRotation;
 
     [HideInInspector] public bool sawPlayer;
@@ -96,16 +96,16 @@ public class EnemyMovement : MonoBehaviour
     void LookForPlayer()
     {
         lookTime += Time.deltaTime;
-        if (lookTime >= 1)
+        if (lookTime >= 1 && lookTime <= 4.5f)
         {
             if (transform.rotation != lookRotation)
             {
-                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, rotationSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, (rotationSpeed-2) * Time.deltaTime);
             }
             else
             {
-
-                lookRotation *= Quaternion.Euler(0,0,15);
+                lookDirection *= -1;
+                lookRotation *= Quaternion.Euler(0,0,30 * lookDirection);
             }
         }
         if (lookTime >= 5)
