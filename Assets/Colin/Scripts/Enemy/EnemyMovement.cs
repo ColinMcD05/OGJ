@@ -18,9 +18,10 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 lastKnown;
     private float lookTime = 0;
     private bool stunned;
-    private bool canMove;
+    public bool canMove;
     private int lookDirection = 1;
     private Quaternion lookRotation;
+    public bool loop;
 
     [HideInInspector] public bool sawPlayer;
     [HideInInspector] public bool seePlayer;
@@ -80,15 +81,22 @@ public class EnemyMovement : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
         if ((transform.position - target.position).sqrMagnitude < reachDistance * reachDistance)
         {
-            if (currentWaypointTarget == waypoints.Length - 1)
+            if (loop)
             {
-                moveDirection = -1;
+                if (currentWaypointTarget == waypoints.Length - 1)
+                {
+                    moveDirection = -1;
+                }
+                else if (currentWaypointTarget == 0)
+                {
+                    moveDirection = 1;
+                }
+                currentWaypointTarget = (currentWaypointTarget + 1 * moveDirection);
             }
-            else if (currentWaypointTarget == 0)
+            else
             {
-                moveDirection = 1;
+                currentWaypointTarget = (currentWaypointTarget + 1) % waypoints.Length;
             }
-            currentWaypointTarget = (currentWaypointTarget + 1 * moveDirection);
             waitTime = Random.Range(1f, 3f);
         }
     }

@@ -6,10 +6,11 @@ public class CameraMovement : MonoBehaviour
     private float rightClamp;
     private float upClamp;
     private float downClamp;
-    [SerializeField] GameObject player;
+    private GameObject player;
 
     void Start()
     {
+        player = GameObject.Find("Player");
         Camera.main.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
         leftClamp = -(Camera.main.orthographicSize * Camera.main.aspect) * 0.75f + 0.5f + Camera.main.transform.position.x;
         rightClamp = (Camera.main.orthographicSize * Camera.main.aspect) * 0.75f - 0.5f + Camera.main.transform.position.x;

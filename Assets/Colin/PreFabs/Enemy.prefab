@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 7538512975410156068}
   m_Layer: 6
   m_Name: Enemy
-  m_TagString: Wizard
+  m_TagString: Dark Elf
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
