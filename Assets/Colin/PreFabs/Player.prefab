@@ -116,7 +116,7 @@ MonoBehaviour:
   sprintTimer: 0
   walkSpeed: 0
   sprintSpeed: 0
-  playerSpeed: 5
+  playerSpeed: 3
 --- !u!114 &-5514251185424170730
 MonoBehaviour:
   m_ObjectHideFlags: 0
