@@ -18,9 +18,10 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 lastKnown;
     private float lookTime = 0;
     private bool stunned;
-    private bool canMove;
-    private int lookDirection = 0;
+    public bool canMove;
+    private int lookDirection = 1;
     private Quaternion lookRotation;
+    public bool loop;
 
     [HideInInspector] public bool sawPlayer;
     [HideInInspector] public bool seePlayer;
@@ -80,15 +81,22 @@ public class EnemyMovement : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
         if ((transform.position - target.position).sqrMagnitude < reachDistance * reachDistance)
         {
-            if (currentWaypointTarget == waypoints.Length - 1)
+            if (loop)
             {
-                moveDirection = -1;
+                if (currentWaypointTarget == waypoints.Length - 1)
+                {
+                    moveDirection = -1;
+                }
+                else if (currentWaypointTarget == 0)
+                {
+                    moveDirection = 1;
+                }
+                currentWaypointTarget = (currentWaypointTarget + 1 * moveDirection);
             }
-            else if (currentWaypointTarget == 0)
+            else
             {
-                moveDirection = 1;
+                currentWaypointTarget = (currentWaypointTarget + 1) % waypoints.Length;
             }
-            currentWaypointTarget = (currentWaypointTarget + 1 * moveDirection);
             waitTime = Random.Range(1f, 3f);
         }
     }
@@ -96,16 +104,16 @@ public class EnemyMovement : MonoBehaviour
     void LookForPlayer()
     {
         lookTime += Time.deltaTime;
-        if (lookTime >= 1)
+        if (lookTime >= 1 && lookTime <= 4.5f)
         {
             if (transform.rotation != lookRotation)
             {
-                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, rotationSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, (rotationSpeed-2) * Time.deltaTime);
             }
             else
             {
-
-                lookRotation *= Quaternion.Euler(0,0,15);
+                lookDirection *= -1;
+                lookRotation *= Quaternion.Euler(0,0,30 * lookDirection);
             }
         }
         if (lookTime >= 5)
