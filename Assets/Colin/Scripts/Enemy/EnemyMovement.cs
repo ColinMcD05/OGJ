@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class EnemyMovement : MonoBehaviour
     private int moveDirection = 1;
     public int rotationSpeed = 5;
     private Vector3 lastKnown;
+    private float lookTime = 1;
+    private bool stunned;
 
     [HideInInspector] public bool sawPlayer;
     [HideInInspector] public bool seePlayer;
@@ -26,13 +29,14 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!sawPlayer)
+        if (!sawPlayer && !stunned)
         {
             Patrol();
         }
         else if (sawPlayer && seePlayer)
         {
             ChasePlayer();
+            lookTime = 0;
         }
         else if (sawPlayer && !seePlayer)
         {
@@ -40,8 +44,10 @@ public class EnemyMovement : MonoBehaviour
             {
                 GoToLastKnown();
             }
-
-            LookForPlayer();
+            else
+            {
+                LookForPlayer();
+            }
         }
     }
 
@@ -81,7 +87,15 @@ public class EnemyMovement : MonoBehaviour
 
     void LookForPlayer()
     {
+        lookTime += Time.deltaTime;
+        if (lookTime >= 1)
+        {
 
+        }
+        if (lookTime >= 5)
+        {
+            sawPlayer = false;
+        }
     }
 
     void ChasePlayer()
@@ -97,7 +111,12 @@ public class EnemyMovement : MonoBehaviour
 
     void GoToLastKnown()
     {
+        Vector3 target = lastKnown;
+        
+        Quaternion targetRotation = Quaternion.LookRotation(transform.forward, (target - transform.position));
+        eyes.transform.rotation = Quaternion.Slerp(eyes.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
+        transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
     }
 
     bool AtLastKnown()
