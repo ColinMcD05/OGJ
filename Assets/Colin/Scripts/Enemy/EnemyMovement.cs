@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] GameObject eyes;
+    private GameObject player;
 
     [SerializeField] Transform[] waypoints;
     public int currentWaypointTarget = 0;
@@ -14,6 +15,11 @@ public class EnemyMovement : MonoBehaviour
 
     [HideInInspector] public bool sawPlayer;
     [HideInInspector] public bool seePlayer;
+
+    void Awake()
+    {
+        player = GameObject.Find("Player");
+    }
 
     private void Update()
     {
@@ -42,12 +48,6 @@ public class EnemyMovement : MonoBehaviour
 
         Transform target = waypoints[currentWaypointTarget];
 
-        Vector2 direction = (target.position - transform.position).normalized;
-        if(direction != Vector2.zero)
-        {
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
-            eyes.transform.rotation = targetRotation;
-        }
         transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
         if ((transform.position - target.position).sqrMagnitude < reachDistance * reachDistance)
         {
@@ -66,7 +66,7 @@ public class EnemyMovement : MonoBehaviour
 
     void LookForPlayer()
     {
-
+        Transform target = player.transform;
     }
 
     void ChasePlayer()

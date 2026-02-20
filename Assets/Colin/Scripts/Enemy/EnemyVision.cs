@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -64,5 +65,25 @@ public class EnemyVision : MonoBehaviour
     bool CheckPlayerInShadow()
     {
         return player.GetComponent<PlayerController>().inShadow;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.white;
+        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, visionRange);
+
+        Vector3 angleOne = DirectionFromAngle(-transform.eulerAngles.z, -detectionAngle / 2);
+        Vector3 angleTwo = DirectionFromAngle(-transform.eulerAngles.z, detectionAngle / 2);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + angleOne * visionRange);
+        Gizmos.DrawLine(transform.position, transform.position + angleTwo * visionRange);
+    }
+
+    private Vector2 DirectionFromAngle(float eulerY, float angleInDegrees)
+    {
+        angleInDegrees += eulerY;
+
+        return new Vector2(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
     }
 }
