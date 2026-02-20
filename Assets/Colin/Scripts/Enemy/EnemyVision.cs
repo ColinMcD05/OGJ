@@ -27,6 +27,8 @@ public class EnemyVision : MonoBehaviour
                 return;
             }
             enemyMovement.sawPlayer = true;
+            enemyMovement.seePlayer = true;
+            Debug.Log("Caught");
         }
         else
         {
@@ -43,7 +45,7 @@ public class EnemyVision : MonoBehaviour
             Vector2 directionToTarget = (player.transform.position - transform.position).normalized;
             if (rangeCheck.transform.CompareTag("Player"))
             {
-                if (Vector2.Angle(transform.up, directionToTarget) < detectionAngle)
+                if (Vector2.Angle(transform.up, directionToTarget) < detectionAngle * 0.5f)
                 {
                     return true;
                 }
@@ -72,8 +74,8 @@ public class EnemyVision : MonoBehaviour
         Gizmos.color = Color.white;
         UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, visionRange);
 
-        Vector3 angleOne = DirectionFromAngle(-transform.eulerAngles.z, -detectionAngle / 2);
-        Vector3 angleTwo = DirectionFromAngle(-transform.eulerAngles.z, detectionAngle / 2);
+        Vector3 angleOne = DirectionFromAngle(-transform.eulerAngles.z, -detectionAngle * 0.5f);
+        Vector3 angleTwo = DirectionFromAngle(-transform.eulerAngles.z, detectionAngle * 0.5f);
 
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, transform.position + angleOne * visionRange);

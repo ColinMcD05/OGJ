@@ -48,6 +48,9 @@ public class EnemyMovement : MonoBehaviour
 
         Transform target = waypoints[currentWaypointTarget];
 
+        Quaternion targetRotation = Quaternion.LookRotation(transform.forward, (target.position - transform.position));
+        eyes.transform.rotation = targetRotation;
+
         transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
         if ((transform.position - target.position).sqrMagnitude < reachDistance * reachDistance)
         {
