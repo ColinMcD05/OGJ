@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9b49bcbf8a1dd449f98f5645baa0a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyVision
+  enemyMovement: {fileID: 4715419750218965148}
   visionRange: 10
   detectionAngle: 45
 --- !u!1 &2854506569808502665
@@ -56,6 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6014346025598399169}
   - component: {fileID: 194961196366441444}
+  - component: {fileID: 4715419750218965148}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Wizard
@@ -138,3 +140,23 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &4715419750218965148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2854506569808502665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b6b6acfa5175524fb7a7b59ffa11f87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
+  eyes: {fileID: 339823372060172670}
+  waypoints: []
+  currentWaypointTarget: 0
+  moveSpeed: 4
+  reachDistance: 0.1
+  waitTime: 3
+  sawPlayer: 0
+  seePlayer: 0
