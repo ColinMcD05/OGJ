@@ -36,10 +36,11 @@ public class EnemyMovement : MonoBehaviour
         }
         else if (sawPlayer && !seePlayer)
         {
-            if (AtLastKnown())
+            if (!AtLastKnown())
             {
                 GoToLastKnown();
             }
+
             LookForPlayer();
         }
     }
@@ -74,6 +75,7 @@ public class EnemyMovement : MonoBehaviour
                 moveDirection = 1;
             }
             currentWaypointTarget = (currentWaypointTarget + 1 * moveDirection);
+            waitTime = Random.Range(1f, 3f);
         }
     }
 
