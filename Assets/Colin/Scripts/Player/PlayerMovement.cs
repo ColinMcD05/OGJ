@@ -4,8 +4,11 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] SpriteRenderer spriteRenderer;
 
-    public Vector2 playerMovement;
-    public bool inControl;
+    // Variables not subject to change, but need to be called upon
+    [HideInInspector] public Vector2 playerMovement;
+    [HideInInspector] public bool inControl;
+
+    // Variables subject to change in inspector
     public float playerSpeed;
 
     void Start()
