@@ -6,10 +6,18 @@ public class PlayerMovement : MonoBehaviour
     public bool inControl;
     public float playerSpeed;
 
+    void Start()
+    {
+        inControl = true;
+    }
+
     void Update()
     {
-        GetInput();
-        Movement();
+        if (inControl)
+        {
+            GetInput();
+            Movement();
+        }
     }
 
     void GetInput()
