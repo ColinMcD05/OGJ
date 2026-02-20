@@ -62,7 +62,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,6 +110,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 7590500270667343578}
   playerMovement: {x: 0, y: 0}
   inControl: 0
+  isSprinting: 0
+  sprintTimer: 0
+  walkSpeed: 0
+  sprintSpeed: 0
   playerSpeed: 5
 --- !u!114 &-5514251185424170730
 MonoBehaviour:
@@ -124,7 +128,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   lives: 0
+  maxLives: 0
   inventory: []
+  inShadow: 0
 --- !u!114 &3455220854803920161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +147,7 @@ MonoBehaviour:
   moveAction: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   attackAction: {fileID: 1120369429361536294, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   sprintAction: {fileID: -7471211009204490832, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  pickUpAction: {fileID: 0}
 --- !u!61 &507997996438629822
 BoxCollider2D:
   m_ObjectHideFlags: 0
