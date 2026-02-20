@@ -11,9 +11,9 @@ public class CameraMovement : MonoBehaviour
     void Start()
     {
         Camera.main.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
-        leftClamp = -(Camera.main.orthographicSize * Camera.main.aspect) * 0.75f + 0.5f - Camera.main.transform.position.x;
+        leftClamp = -(Camera.main.orthographicSize * Camera.main.aspect) * 0.75f + 0.5f + Camera.main.transform.position.x;
         rightClamp = (Camera.main.orthographicSize * Camera.main.aspect) * 0.75f - 0.5f + Camera.main.transform.position.x;
-        upClamp = Camera.main.orthographicSize * 0.75f - 0.5f - Camera.main.transform.position.y;
+        upClamp = Camera.main.orthographicSize * 0.75f - 0.5f + Camera.main.transform.position.y;
         downClamp = -Camera.main.orthographicSize * 0.75f + 0.5f + Camera.main.transform.position.y;
 
         // Debug.Log($"{leftClamp} {rightClamp} {upClamp} {downClamp}");

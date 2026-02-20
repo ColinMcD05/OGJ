@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     public int lives;
     public List<string> inventory;
+    public bool inShadow;
 
     void Start()
     {

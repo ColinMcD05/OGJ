@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Wizard
+  - Dark Elf
   layers:
   - Default
   - TransparentFX

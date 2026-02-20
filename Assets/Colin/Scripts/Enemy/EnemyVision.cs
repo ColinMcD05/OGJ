@@ -3,7 +3,7 @@ using UnityEngine.UIElements;
 
 public class EnemyVision : MonoBehaviour
 {
-
+    LayerMask layerMask;
     GameObject player;
     public float visionRange = 10;
     [Range(1,360)] public float detectionAngle = 45;
@@ -11,13 +11,24 @@ public class EnemyVision : MonoBehaviour
     void Awake()
     {
         player = GameObject.Find("Player");
+        layerMask = LayerMask.GetMask("Player", "Wall");
     }
 
     void Update()
     {
-        if (CheckInAngle() && CheckIsNotHidden())
+        if (this.gameObject.CompareTag("Dark Elf"))
         {
-            Debug.Log("You're Caught!");
+            if (CheckInAngle() && CheckIsNotHidden())
+            {
+                Debug.Log("You're Caught!");
+            }
+        }
+        else
+        {
+            if (CheckInAngle() && CheckIsNotHidden() && CheckPlayerInShadow())
+            {
+                Debug.Log("You're Caught!");
+            }
         }
         // Debug.Log(CheckIsNotHidden());
     }
@@ -41,11 +52,16 @@ public class EnemyVision : MonoBehaviour
 
     bool CheckIsNotHidden()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, (player.transform.position - transform.position), visionRange);
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, (player.transform.position - transform.position), visionRange, layerMask);
         if (ray.collider != null)
         {
             return ray.collider.CompareTag("Player");
         }
         return false;
+    }
+
+    bool CheckPlayerInShadow()
+    {
+        return player.GetComponent<PlayerController>().inShadow;
     }
 }
