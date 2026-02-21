@@ -8,7 +8,7 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] GameObject eyes;
     private GameObject player;
-    //[SerializeField] NavMeshAgent agent;
+    [SerializeField] NavMeshAgent agent;
 
     [SerializeField] Transform[] waypoints;
     public int currentWaypointTarget = 0;
@@ -31,8 +31,8 @@ public class EnemyMovement : MonoBehaviour
 
     void Awake()
     {
-        //agent.updateRotation = false;
-        //agent.updateUpAxis = false;
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
 
         canMove = true;
         player = GameObject.Find("Player");
@@ -91,7 +91,6 @@ public class EnemyMovement : MonoBehaviour
 
         if ((transform.position - target.position).sqrMagnitude < reachDistance * reachDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
             if (!loop && waypoints.Length > 1)
             {
                 if (currentWaypointTarget == waypoints.Length - 1)
@@ -109,6 +108,10 @@ public class EnemyMovement : MonoBehaviour
                 currentWaypointTarget = (currentWaypointTarget + 1) % waypoints.Length;
             }
             waitTime = Random.Range(1f, 3f);
+        }
+        else
+        {
+            agent.SetDestination(target.position);
         }
     }
 
@@ -129,7 +132,7 @@ public class EnemyMovement : MonoBehaviour
         }
         if (lookTime >= 5)
         {
-            //agent.SetDestination(waypoints[currentWaypointTarget].position);
+            agent.SetDestination(waypoints[currentWaypointTarget].position);
             sawPlayer = false;
         }
     }
@@ -139,7 +142,7 @@ public class EnemyMovement : MonoBehaviour
         Transform target = player.transform;
 
         transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
-        //agent.SetDestination(target.position);
+        agent.SetDestination(target.position);
         lastKnown = target.position;
     }
 
@@ -152,12 +155,12 @@ public class EnemyMovement : MonoBehaviour
 
 
         transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
-        //agent.SetDestination(target);
+        agent.SetDestination(target);
     }
 
     bool AtLastKnown()
     {
-        return transform.position == lastKnown;
+        return agent.transform.position == lastKnown;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
