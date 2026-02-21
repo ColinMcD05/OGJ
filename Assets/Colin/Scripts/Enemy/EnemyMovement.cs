@@ -8,7 +8,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] GameObject eyes;
     private GameObject player;
 
-    [SerializeField] List<Transform> waypoints;
+    [SerializeField] Transform[] waypoints;
     public int currentWaypointTarget = 0;
 
     public float moveSpeed = 4;
@@ -63,9 +63,9 @@ public class EnemyMovement : MonoBehaviour
 
     void Patrol()
     {
-        if (waypoints == null || waypoints.Count == 0)
+        if (waypoints == null || waypoints.Length == 0)
         {
-            waypoints.Add(transform);
+            return;
         }
         if (waitTime > 0f)
         {
@@ -87,7 +87,7 @@ public class EnemyMovement : MonoBehaviour
         {
             if (!loop)
             {
-                if (currentWaypointTarget == waypoints.Count - 1)
+                if (currentWaypointTarget == waypoints.Length - 1)
                 {
                     moveDirection = -1;
                 }
@@ -99,7 +99,7 @@ public class EnemyMovement : MonoBehaviour
             }
             else
             {
-                currentWaypointTarget = (currentWaypointTarget + 1) % waypoints.Count;
+                currentWaypointTarget = (currentWaypointTarget + 1) % waypoints.Length;
             }
             waitTime = Random.Range(1f, 3f);
         }
@@ -129,9 +129,6 @@ public class EnemyMovement : MonoBehaviour
     void ChasePlayer()
     {
         Transform target = player.transform;
-
-        Quaternion targetRotation = Quaternion.LookRotation(transform.forward, (target.position - transform.position));
-        eyes.transform.rotation = Quaternion.Slerp(eyes.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
         transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
         lastKnown = target.position;
