@@ -1085,6 +1085,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1052741630023256083, guid: e435a6e8632053246ab90dc44bc1771f, type: 3}
+      propertyPath: visionRange
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2854506569808502665, guid: e435a6e8632053246ab90dc44bc1771f, type: 3}
       propertyPath: m_Name
       value: Enemy 1
