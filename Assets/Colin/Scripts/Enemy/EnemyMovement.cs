@@ -1,13 +1,14 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
+using System.Collections.Generic;
 
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] GameObject eyes;
     private GameObject player;
 
-    [SerializeField] Transform[] waypoints;
+    [SerializeField] List<Transform> waypoints;
     public int currentWaypointTarget = 0;
 
     public float moveSpeed = 4;
@@ -62,7 +63,10 @@ public class EnemyMovement : MonoBehaviour
 
     void Patrol()
     {
-        if (waypoints == null || waypoints.Length == 0) return;
+        if (waypoints == null || waypoints.Count == 0)
+        {
+            waypoints.Add(transform);
+        }
         if (waitTime > 0f)
         {
             waitTime -= Time.deltaTime;
@@ -81,9 +85,9 @@ public class EnemyMovement : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
         if ((transform.position - target.position).sqrMagnitude < reachDistance * reachDistance)
         {
-            if (loop)
+            if (!loop)
             {
-                if (currentWaypointTarget == waypoints.Length - 1)
+                if (currentWaypointTarget == waypoints.Count - 1)
                 {
                     moveDirection = -1;
                 }
@@ -95,7 +99,7 @@ public class EnemyMovement : MonoBehaviour
             }
             else
             {
-                currentWaypointTarget = (currentWaypointTarget + 1) % waypoints.Length;
+                currentWaypointTarget = (currentWaypointTarget + 1) % waypoints.Count;
             }
             waitTime = Random.Range(1f, 3f);
         }
