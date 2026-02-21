@@ -26,6 +26,11 @@ public abstract class Weapon : MonoBehaviour
         if(col.CompareTag("Player"))
         {
             Debug.Log("Equipped by the Player!");
+            SpriteRenderer targetSR = col.GetComponent<PlayerInput>()
+                .weaponControllerScript
+                .hitbox.GetComponent<SpriteRenderer>();
+            targetSR.sprite = GetComponent<SpriteRenderer>().sprite;
+            targetSR.color = GetComponent<SpriteRenderer>().color;
             transform.gameObject.SetActive(false);
         }
     }
