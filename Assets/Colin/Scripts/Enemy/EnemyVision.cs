@@ -36,7 +36,7 @@ public class EnemyVision : MonoBehaviour
         {
             enemyMovement.seePlayer = false;
         }
-        // Debug.Log(CheckIsNotHidden());
+        Debug.Log(CheckInAngle());
     }
 
     bool CheckInAngle()
@@ -47,6 +47,7 @@ public class EnemyVision : MonoBehaviour
             Vector2 directionToTarget = (player.transform.position - transform.position).normalized;
             if (rangeCheck.transform.CompareTag("Player"))
             {
+                Debug.Log("Yes");
                 if (Vector2.Angle(transform.up, directionToTarget) < detectionAngle * 0.5f)
                 {
                     return true;
