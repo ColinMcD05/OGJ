@@ -16,6 +16,11 @@ public abstract class Weapon : MonoBehaviour
         _pickedUp = true;
     }
 
+    void Start()
+    {
+        _id = Random.Range(1000,10000); // Not shielding duplicates (!)
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if(col.CompareTag("Player"))

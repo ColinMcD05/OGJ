@@ -988,6 +988,10 @@ PrefabInstance:
       propertyPath: pickUpAction
       value: 
       objectReference: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    - target: {fileID: 3455220854803920161, guid: 56dd824538d44da44ada48321440946e, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 1781230260}
     - target: {fileID: 7590500270667343578, guid: 56dd824538d44da44ada48321440946e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1041,7 +1045,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7654489093977032034, guid: 56dd824538d44da44ada48321440946e, type: 3}
-      insertIndex: 3
+      insertIndex: 5
       addedObject: {fileID: 1781230256}
   m_SourcePrefab: {fileID: 100100000, guid: 56dd824538d44da44ada48321440946e, type: 3}
 --- !u!1 &1559608279
@@ -1171,6 +1175,17 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1781230260 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -5514251185424170730, guid: 56dd824538d44da44ada48321440946e, type: 3}
+  m_PrefabInstance: {fileID: 938562051}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781230248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2b13a91c88d61248a30590a60ccaae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
 --- !u!1 &1789032589
 GameObject:
   m_ObjectHideFlags: 0
