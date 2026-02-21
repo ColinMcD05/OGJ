@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1088900788374392296}
   - component: {fileID: 8702263948095096846}
   m_Layer: 0
-  m_Name: Shadow Heist Tile palette 2
+  m_Name: Shadow Heist Pillars Palette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
