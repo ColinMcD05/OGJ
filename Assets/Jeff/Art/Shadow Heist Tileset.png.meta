@@ -114,7 +114,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 48
+        y: 208
         width: 16
         height: 16
       alignment: 0
@@ -136,7 +136,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 48
+        y: 208
         width: 16
         height: 16
       alignment: 0
@@ -158,7 +158,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 48
+        y: 208
         width: 16
         height: 16
       alignment: 0
@@ -180,7 +180,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 48
+        y: 208
         width: 16
         height: 16
       alignment: 0
@@ -202,7 +202,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 48
+        y: 208
         width: 16
         height: 16
       alignment: 0
@@ -224,7 +224,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 48
+        y: 208
         width: 16
         height: 16
       alignment: 0
@@ -246,7 +246,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 48
+        y: 208
         width: 16
         height: 16
       alignment: 0
@@ -268,7 +268,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 112
-        y: 48
+        y: 208
         width: 16
         height: 16
       alignment: 0
@@ -290,7 +290,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 192
         width: 16
         height: 16
       alignment: 0
@@ -312,7 +312,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 32
+        y: 192
         width: 16
         height: 16
       alignment: 0
@@ -334,7 +334,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 192
         width: 16
         height: 16
       alignment: 0
@@ -356,7 +356,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 32
+        y: 192
         width: 16
         height: 16
       alignment: 0
@@ -378,7 +378,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 32
+        y: 192
         width: 16
         height: 16
       alignment: 0
@@ -400,7 +400,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 32
+        y: 192
         width: 16
         height: 16
       alignment: 0
@@ -422,7 +422,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 32
+        y: 192
         width: 16
         height: 16
       alignment: 0
@@ -444,7 +444,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 112
-        y: 32
+        y: 192
         width: 16
         height: 16
       alignment: 0
@@ -466,7 +466,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
+        y: 176
         width: 16
         height: 16
       alignment: 0
@@ -488,7 +488,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 16
+        y: 176
         width: 16
         height: 16
       alignment: 0
@@ -510,7 +510,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 16
+        y: 176
         width: 16
         height: 16
       alignment: 0
@@ -532,7 +532,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 16
+        y: 176
         width: 16
         height: 16
       alignment: 0
@@ -554,7 +554,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 16
+        y: 176
         width: 16
         height: 16
       alignment: 0
@@ -576,7 +576,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 16
+        y: 176
         width: 16
         height: 16
       alignment: 0
@@ -598,7 +598,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 16
+        y: 176
         width: 16
         height: 16
       alignment: 0
@@ -620,7 +620,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 112
-        y: 16
+        y: 176
         width: 16
         height: 16
       alignment: 0
@@ -642,7 +642,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 160
         width: 16
         height: 16
       alignment: 0
@@ -664,7 +664,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 0
+        y: 160
         width: 16
         height: 16
       alignment: 0
@@ -686,7 +686,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 0
+        y: 160
         width: 16
         height: 16
       alignment: 0
@@ -708,7 +708,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 0
+        y: 160
         width: 16
         height: 16
       alignment: 0
@@ -730,7 +730,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 0
+        y: 160
         width: 16
         height: 16
       alignment: 0
@@ -752,7 +752,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 0
+        y: 160
         width: 16
         height: 16
       alignment: 0
@@ -774,7 +774,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 0
+        y: 160
         width: 16
         height: 16
       alignment: 0
@@ -796,7 +796,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 112
-        y: 0
+        y: 160
         width: 16
         height: 16
       alignment: 0
@@ -809,6 +809,798 @@ TextureImporter:
       bones: []
       spriteID: af692fc0d9bab544b84ab2ef886d47b9
       internalID: 980378048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7bc38d7b86dfa54a9d52d4760c259ae
+      internalID: 245119371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_33
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b486a393d06be754a9ad06809a3e2b2d
+      internalID: -950775703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_34
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 848335992271c0b4f96088c7e16e79ff
+      internalID: 1081455975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_35
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7e7142206a593a4ea50b9165d411ff1
+      internalID: -943506224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_36
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e271776df4608c4393192dedafbd023
+      internalID: 1532147924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_37
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95c8b5435f7af89498503d7a7540e217
+      internalID: 1785616050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfb70362bd6d8c7429f0390bdc0ca7dd
+      internalID: -1903346301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_39
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0e1b97872ae0504c8fcdaf57a0557c9
+      internalID: 777557011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_40
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e36f57a858b04c14e8c76a1c083d39be
+      internalID: 1116257717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_41
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b11790e6d1cc294495272bd3e114b72
+      internalID: -1797537252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_42
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97f24d997f8fab34b8943b688fe4c4a8
+      internalID: -264715435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_43
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 803bd2c083887984bb91fd91fef76223
+      internalID: -1217401664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e217279138b95ce42802bd412c8c44a1
+      internalID: 1538648309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_45
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bfe01e6f6ce5c64e9f840192f1d102f
+      internalID: -1522234948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_46
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e09e59680b18964494855a180df2be3
+      internalID: 2094193251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_47
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa6d608ae77716e4baac836edaed4bff
+      internalID: -1833132810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_48
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bed180aad8643134ba92d54d98575500
+      internalID: 1634604436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_49
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55cba998460cf414684f09ab817542da
+      internalID: 823766867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab619f6af7e62844db5cf929dd13efc9
+      internalID: -1418402983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_51
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdedc3ab751da684bbae9c3eaf05d9a5
+      internalID: 1527396558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_52
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7fd3ab68d192d54badc1bee8154db48
+      internalID: 1183267062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_53
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b66fbbb1a39ffaf438ddbd6e4fa10440
+      internalID: 1962362974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_54
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d9b24ec18c1a744a32475f7e9bb42a
+      internalID: -209749465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_55
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 967a47e891c8fb044b62c0cc85ec5bcf
+      internalID: 1493783696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0a460854a2322e468c493e88aad45ec
+      internalID: -1688162127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_57
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 375ebd921fc37c041abe3f31a71c959f
+      internalID: 1594819961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_58
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ace02d44085d819408b4b46d8f077dbe
+      internalID: -781505430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_59
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31ef35c27f96b8f42a6958aecaa6090e
+      internalID: -441405418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_60
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd90b671592c1d2408d62e052ab65da9
+      internalID: -2130944748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_61
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d0af86a45a61084bad1141b9e25eaf6
+      internalID: 1057924235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_62
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9ec5011c0fbbcf419753f1603306b0e
+      internalID: -1933399411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_63
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a676de57eead0234aab1fda098126c72
+      internalID: -1540913481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_64
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f4b58a7ed6cccb449150c3d2c520f38
+      internalID: 1375504621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_65
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2a651e53ad3d0d439709d144cb9cd2e
+      internalID: 467711038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_66
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1d61292cd2c61640b2e8eb9238b80af
+      internalID: 211014908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Heist Tileset_67
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2fc785b76084f04ca18e75eb1a2987d
+      internalID: -721313617
       vertices: []
       indices: 
       edges: []
@@ -855,9 +1647,45 @@ TextureImporter:
       Shadow Heist Tileset_3: -1445329779
       Shadow Heist Tileset_30: -1534711609
       Shadow Heist Tileset_31: 980378048
+      Shadow Heist Tileset_32: 245119371
+      Shadow Heist Tileset_33: -950775703
+      Shadow Heist Tileset_34: 1081455975
+      Shadow Heist Tileset_35: -943506224
+      Shadow Heist Tileset_36: 1532147924
+      Shadow Heist Tileset_37: 1785616050
+      Shadow Heist Tileset_38: -1903346301
+      Shadow Heist Tileset_39: 777557011
       Shadow Heist Tileset_4: -1755763213
+      Shadow Heist Tileset_40: 1116257717
+      Shadow Heist Tileset_41: -1797537252
+      Shadow Heist Tileset_42: -264715435
+      Shadow Heist Tileset_43: -1217401664
+      Shadow Heist Tileset_44: 1538648309
+      Shadow Heist Tileset_45: -1522234948
+      Shadow Heist Tileset_46: 2094193251
+      Shadow Heist Tileset_47: -1833132810
+      Shadow Heist Tileset_48: 1634604436
+      Shadow Heist Tileset_49: 823766867
       Shadow Heist Tileset_5: -1016559804
+      Shadow Heist Tileset_50: -1418402983
+      Shadow Heist Tileset_51: 1527396558
+      Shadow Heist Tileset_52: 1183267062
+      Shadow Heist Tileset_53: 1962362974
+      Shadow Heist Tileset_54: -209749465
+      Shadow Heist Tileset_55: 1493783696
+      Shadow Heist Tileset_56: -1688162127
+      Shadow Heist Tileset_57: 1594819961
+      Shadow Heist Tileset_58: -781505430
+      Shadow Heist Tileset_59: -441405418
       Shadow Heist Tileset_6: -1498009672
+      Shadow Heist Tileset_60: -2130944748
+      Shadow Heist Tileset_61: 1057924235
+      Shadow Heist Tileset_62: -1933399411
+      Shadow Heist Tileset_63: -1540913481
+      Shadow Heist Tileset_64: 1375504621
+      Shadow Heist Tileset_65: 467711038
+      Shadow Heist Tileset_66: 211014908
+      Shadow Heist Tileset_67: -721313617
       Shadow Heist Tileset_7: -1514332935
       Shadow Heist Tileset_8: 899090885
       Shadow Heist Tileset_9: 713498593
