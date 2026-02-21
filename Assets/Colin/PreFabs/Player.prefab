@@ -8,12 +8,16 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 814750383343014719}
-  - component: {fileID: 6651815294866708686}
-  - component: {fileID: 7863934161451939588}
-  m_Layer: 0
-  m_Name: PlayerWeapon
-  m_TagString: Untagged
+  - component: {fileID: 7942406610666471627}
+  - component: {fileID: 7590500270667343578}
+  # - component: {fileID: 754369658743389609}
+  # - component: {fileID: -5514251185424170730}
+  # - component: {fileID: 3455220854803920161}
+  - component: {fileID: 507997996438629822}
+  - component: {fileID: 7211031528267339157}
+  m_Layer: 3
+  m_Name: Player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -252,10 +256,10 @@ GameObject:
   - component: {fileID: 7590500270667343578}
   - component: {fileID: 507997996438629822}
   - component: {fileID: 7211031528267339157}
-  - component: {fileID: -5514251185424170730}
+  # - component: {fileID: -5514251185424170730}
   - component: {fileID: 4949293597630476357}
-  - component: {fileID: 3455220854803920161}
-  - component: {fileID: 754369658743389609}
+  # - component: {fileID: 3455220854803920161}
+  # - component: {fileID: 754369658743389609}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -338,6 +342,60 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+# --- !u!114 &754369658743389609
+# MonoBehaviour:
+#   m_ObjectHideFlags: 0
+#   m_CorrespondingSourceObject: {fileID: 0}
+#   m_PrefabInstance: {fileID: 0}
+#   m_PrefabAsset: {fileID: 0}
+#   m_GameObject: {fileID: 7654489093977032034}
+#   m_Enabled: 1
+#   m_EditorHideFlags: 0
+#   m_Script: {fileID: 11500000, guid: 236a3649590baa34aaeba07356a417e1, type: 3}
+#   m_Name: 
+#   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+#   spriteRenderer: {fileID: 7590500270667343578}
+#   playerRigidbody: {fileID: 7211031528267339157}
+#   playerMovement: {x: 0, y: 0}
+#   inControl: 0
+#   isSprinting: 0
+#   sprintTimer: 0
+#   playerSpeed: 3
+#   walkSpeed: 3
+#   sprintSpeed: 5
+#   stamina: 10
+# --- !u!114 &-5514251185424170730
+# MonoBehaviour:
+#   m_ObjectHideFlags: 0
+#   m_CorrespondingSourceObject: {fileID: 0}
+#   m_PrefabInstance: {fileID: 0}
+#   m_PrefabAsset: {fileID: 0}
+#   m_GameObject: {fileID: 7654489093977032034}
+#   m_Enabled: 1
+#   m_EditorHideFlags: 0
+#   m_Script: {fileID: 11500000, guid: d2b13a91c88d61248a30590a60ccaae8, type: 3}
+#   m_Name: 
+#   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+#   lives: 0
+#   maxLives: 0
+#   inventory: []
+#   inShadow: 0
+# # --- !u!114 &3455220854803920161
+# MonoBehaviour:
+#   m_ObjectHideFlags: 0
+#   m_CorrespondingSourceObject: {fileID: 0}
+#   m_PrefabInstance: {fileID: 0}
+#   m_PrefabAsset: {fileID: 0}
+#   m_GameObject: {fileID: 7654489093977032034}
+#   m_Enabled: 1
+#   m_EditorHideFlags: 0
+#   m_Script: {fileID: 11500000, guid: 352d675f5ddfff843bda236aca6158f1, type: 3}
+#   m_Name: 
+#   m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
+#   playerMovement: {fileID: 754369658743389609}
+#   moveAction: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+#   attackAction: {fileID: 1120369429361536294, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+#   sprintAction: {fileID: -7471211009204490832, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!61 &507997996438629822
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -411,24 +469,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &-5514251185424170730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7654489093977032034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2b13a91c88d61248a30590a60ccaae8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  lives: 0
-  maxLives: 0
-  inventory: []
-  activeTWeapon: 0
-  activePWeapon: 0
-  inShadow: 0
+# --- !u!114 &-5514251185424170730
+# MonoBehaviour:
+#   m_ObjectHideFlags: 0
+#   m_CorrespondingSourceObject: {fileID: 0}
+#   m_PrefabInstance: {fileID: 0}
+#   m_PrefabAsset: {fileID: 0}
+#   m_GameObject: {fileID: 7654489093977032034}
+#   m_Enabled: 1
+#   m_EditorHideFlags: 0
+#   m_Script: {fileID: 11500000, guid: d2b13a91c88d61248a30590a60ccaae8, type: 3}
+#   m_Name: 
+#   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+#   lives: 0
+#   maxLives: 0
+#   inventory: []
+#   activeTWeapon: 0
+#   activePWeapon: 0
+#   inShadow: 0
 --- !u!114 &4949293597630476357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,44 +517,44 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &3455220854803920161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7654489093977032034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 352d675f5ddfff843bda236aca6158f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
-  playerController: {fileID: -5514251185424170730}
-  playerMovement: {fileID: 754369658743389609}
-  weaponControllerScript: {fileID: 6651815294866708686}
-  weaponRotator: {fileID: 4278911545742275629}
-  moveAction: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  attackAction: {fileID: 1120369429361536294, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  sprintAction: {fileID: -7471211009204490832, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  cooldown: 0.5
---- !u!114 &754369658743389609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7654489093977032034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 236a3649590baa34aaeba07356a417e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  spriteRenderer: {fileID: 7590500270667343578}
-  playerRigidbody: {fileID: 7211031528267339157}
-  playerMovement: {x: 0, y: 0}
-  inControl: 0
-  isSprinting: 0
-  sprintTimer: 0
-  walkSpeed: 0
-  sprintSpeed: 0
-  playerSpeed: 5
+# --- !u!114 &3455220854803920161
+# MonoBehaviour:
+#   m_ObjectHideFlags: 0
+#   m_CorrespondingSourceObject: {fileID: 0}
+#   m_PrefabInstance: {fileID: 0}
+#   m_PrefabAsset: {fileID: 0}
+#   m_GameObject: {fileID: 7654489093977032034}
+#   m_Enabled: 1
+#   m_EditorHideFlags: 0
+#   m_Script: {fileID: 11500000, guid: 352d675f5ddfff843bda236aca6158f1, type: 3}
+#   m_Name: 
+#   m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
+#   playerController: {fileID: -5514251185424170730}
+#   playerMovement: {fileID: 754369658743389609}
+#   weaponControllerScript: {fileID: 6651815294866708686}
+#   weaponRotator: {fileID: 4278911545742275629}
+#   moveAction: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+#   attackAction: {fileID: 1120369429361536294, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+#   sprintAction: {fileID: -7471211009204490832, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+#   cooldown: 0.5
+# --- !u!114 &754369658743389609
+# MonoBehaviour:
+#   m_ObjectHideFlags: 0
+#   m_CorrespondingSourceObject: {fileID: 0}
+#   m_PrefabInstance: {fileID: 0}
+#   m_PrefabAsset: {fileID: 0}
+#   m_GameObject: {fileID: 7654489093977032034}
+#   m_Enabled: 1
+#   m_EditorHideFlags: 0
+#   m_Script: {fileID: 11500000, guid: 236a3649590baa34aaeba07356a417e1, type: 3}
+#   m_Name: 
+#   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+#   spriteRenderer: {fileID: 7590500270667343578}
+#   playerRigidbody: {fileID: 7211031528267339157}
+#   playerMovement: {x: 0, y: 0}
+#   inControl: 0
+#   isSprinting: 0
+#   sprintTimer: 0
+#   walkSpeed: 0
+#   sprintSpeed: 0
+#   playerSpeed: 5
