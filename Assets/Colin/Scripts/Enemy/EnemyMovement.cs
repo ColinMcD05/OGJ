@@ -25,6 +25,7 @@ public class EnemyMovement : MonoBehaviour
     private int lookDirection = 1;
     private Quaternion lookRotation;
     public bool loop;
+    private Vector2 startPostition;
 
     [HideInInspector] public bool sawPlayer;
     [HideInInspector] public bool seePlayer;
@@ -38,11 +39,12 @@ public class EnemyMovement : MonoBehaviour
         canMove = true;
         player = GameObject.Find("Player");
 
+        startPostition = transform.position;
     }
 
     private void Update()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+        //transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         if (canMove && !stunned)
         {
             if (!sawPlayer)
