@@ -10,8 +10,18 @@ public abstract class Weapon : MonoBehaviour
     int _id;
     bool _pickedUp = false;
 
+
     public void PickedUp()
     {
         _pickedUp = true;
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.CompareTag("Player"))
+        {
+            Debug.Log("Equipped by the Player!");
+            transform.gameObject.SetActive(false);
+        }
     }
 }
