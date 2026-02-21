@@ -88,4 +88,9 @@ public class EnemyVision : MonoBehaviour
 
         return new Vector2(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
     }
+
+    private void ChangeAngle()
+    {
+
+    }
 }

@@ -8,7 +8,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] GameObject eyes;
     private GameObject player;
 
-    [SerializeField] List<Transform> waypoints;
+    [SerializeField] Transform[] waypoints;
     public int currentWaypointTarget = 0;
 
     public float moveSpeed = 4;
@@ -63,9 +63,9 @@ public class EnemyMovement : MonoBehaviour
 
     void Patrol()
     {
-        if (waypoints == null || waypoints.Count == 0)
+        if (waypoints == null || waypoints.Length == 0)
         {
-            waypoints.Add(transform);
+            return;
         }
         if (waitTime > 0f)
         {
@@ -87,7 +87,7 @@ public class EnemyMovement : MonoBehaviour
         {
             if (!loop)
             {
-                if (currentWaypointTarget == waypoints.Count - 1)
+                if (currentWaypointTarget == waypoints.Length - 1)
                 {
                     moveDirection = -1;
                 }
