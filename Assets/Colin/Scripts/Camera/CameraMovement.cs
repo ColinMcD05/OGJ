@@ -23,6 +23,7 @@ public class CameraMovement : MonoBehaviour
     void LateUpdate()
     {
         MoveCamera();
+        Debug.Log(Random.Range(1, 3));
     }
 
     void MoveCamera()

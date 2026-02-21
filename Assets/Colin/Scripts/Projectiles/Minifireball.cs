@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Minifireball : MonoBehaviour
 {
-
+    public int damage = 1;
     public int speed;
 
     private void Awake()
@@ -25,6 +25,10 @@ public class Minifireball : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.GetComponent<PlayerDeath>().Hit();
+        }
+        else if (collision.gameObject.layer == LayerMask.GetMask("Enemies"))
+        {
+            collision.GetComponent<EnemyController>().GetHit(damage);
         }
         Destroy(this.gameObject);
     }

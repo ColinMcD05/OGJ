@@ -7,6 +7,7 @@ public class Fireball : MonoBehaviour
     [SerializeField] GameObject miniFireballPrefab;
 
     public int speed = 5;
+    public int damage = 2;
 
     void Awake()
     {
@@ -56,6 +57,14 @@ public class Fireball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<PlayerDeath>().Hit();
+        }
+        else if (collision.gameObject.layer == LayerMask.GetMask("Enemies"))
+        {
+            collision.GetComponent<EnemyController>().GetHit(damage);
+        }
         HitSomething();
     }
 }

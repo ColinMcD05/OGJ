@@ -3,15 +3,23 @@ using UnityEngine;
 public class Wizard : MonoBehaviour
 {
     GameObject player;
+    [SerializeField] EnemyController enemyController;
     [SerializeField] EnemyMovement enemyMovement;
     [SerializeField] GameObject eyes;
     [SerializeField] GameObject fireballPrefab;
+    [SerializeField] GameObject magicMisslePrefab;
 
     public int health;
     public int stunHealth;
     public float range = 10;
     public float cooldownTimer = 5;
     public float windUp = 1;
+
+    void Awake()
+    {
+        enemyController.health = health;
+        enemyController.stunHealth = stunHealth;
+    }
 
     void Start()
     {
@@ -40,9 +48,17 @@ public class Wizard : MonoBehaviour
     {
         // shoot animation
         // back to normal anitmation
-        GameObject fireball = Instantiate(fireballPrefab, transform.position, eyes.transform.rotation);
 
-        Invoke("CanMove", windUp + 1);
+        int attackType = Random.Range(1, 3);
+        if (attackType == 1)
+        {
+            GameObject fireball = Instantiate(fireballPrefab, transform.position, eyes.transform.rotation);
+            Invoke("CanMove", windUp + 1);
+        }
+        else
+        {
+            GameObject magicMissle = Instantiate(magicMisslePrefab, transform.position, eyes.transform.rotation);
+        }
     }
 
     void CanMove()
