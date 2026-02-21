@@ -42,6 +42,7 @@ public class Archer : MonoBehaviour
         // shoot animation
         // back to normal anitmation
         GameObject arrow = Instantiate(arrowPrefab, transform.position, eyes.transform.rotation);
+        arrow.GetComponent<Arrow>().targetPosition = player.transform.position;
         enemyMovement.canMove = true;
     }
 }

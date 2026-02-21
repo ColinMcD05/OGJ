@@ -2,13 +2,11 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 using System.Collections.Generic;
-using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] GameObject eyes;
     private GameObject player;
-    //[SerializeField] NavMeshAgent agent;
 
     [SerializeField] Transform[] waypoints;
     public int currentWaypointTarget = 0;
@@ -31,17 +29,12 @@ public class EnemyMovement : MonoBehaviour
 
     void Awake()
     {
-        //agent.updateRotation = false;
-        //agent.updateUpAxis = false;
-
         canMove = true;
         player = GameObject.Find("Player");
-
     }
 
     private void Update()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         if (canMove && !stunned)
         {
             if (!sawPlayer)
@@ -89,10 +82,10 @@ public class EnemyMovement : MonoBehaviour
             eyes.transform.rotation = targetRotation;
         }
 
+        transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
         if ((transform.position - target.position).sqrMagnitude < reachDistance * reachDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
-            if (!loop && waypoints.Length > 1)
+            if (!loop)
             {
                 if (currentWaypointTarget == waypoints.Length - 1)
                 {
@@ -129,7 +122,6 @@ public class EnemyMovement : MonoBehaviour
         }
         if (lookTime >= 5)
         {
-            //agent.SetDestination(waypoints[currentWaypointTarget].position);
             sawPlayer = false;
         }
     }
@@ -139,7 +131,6 @@ public class EnemyMovement : MonoBehaviour
         Transform target = player.transform;
 
         transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
-        //agent.SetDestination(target.position);
         lastKnown = target.position;
     }
 
@@ -150,9 +141,7 @@ public class EnemyMovement : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(transform.forward, (target - transform.position));
         eyes.transform.rotation = Quaternion.Slerp(eyes.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-
         transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
-        //agent.SetDestination(target);
     }
 
     bool AtLastKnown()

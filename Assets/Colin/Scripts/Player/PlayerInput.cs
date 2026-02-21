@@ -50,7 +50,7 @@ public class PlayerInput : MonoBehaviour
 
     private void OnSprintPerformed(InputAction.CallbackContext context)
     {
-        playerMovement.Sprint();
+        playerMovement.isSprinting = !playerMovement.isSprinting;
     }
 
     private void OnAttackPerformed(InputAction.CallbackContext context)

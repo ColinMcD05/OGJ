@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -10,18 +9,15 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public Vector2 playerMovement;
     [HideInInspector] public bool inControl;
     [HideInInspector] public bool isSprinting;
-    private float sprintTimer;
-    [HideInInspector] public float playerSpeed;
+    public float sprintTimer;
 
     // Variables subject to change in inspector
     public float walkSpeed;
     public float sprintSpeed;
-    public float stamina;
+    public float playerSpeed;
 
     void Start()
     {
-        sprintTimer = stamina;
-        playerSpeed = walkSpeed;
         inControl = true;
     }
 
@@ -30,18 +26,6 @@ public class PlayerMovement : MonoBehaviour
         if (inControl)
         {
             Movement();
-        }
-        if (isSprinting && sprintTimer > 0)
-        {
-            sprintTimer -= Time.deltaTime;
-        }
-        else if (!isSprinting && sprintTimer <= stamina)
-        {
-            sprintTimer += Time.deltaTime * 3;
-        }
-        else if(sprintTimer <= 0)
-        {
-            Sprint();
         }
     }
 
@@ -64,16 +48,12 @@ public class PlayerMovement : MonoBehaviour
         */
     }
 
-    public void Sprint()
+    void Sprint(bool isSprinting)
     {
-        isSprinting = !isSprinting;
-        if (playerSpeed == walkSpeed)
+        if (isSprinting && sprintTimer > 0)
         {
-            playerSpeed = sprintSpeed;
-        }
-        else
-        {
-            playerSpeed = walkSpeed;
+            sprintTimer -= Time.deltaTime;
+            playerSpeed += 2;
         }
     }
 }
