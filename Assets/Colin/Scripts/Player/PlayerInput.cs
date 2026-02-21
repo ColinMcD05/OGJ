@@ -88,7 +88,7 @@ public class PlayerInput : MonoBehaviour
         canAttack = false;
 
 
-        weaponControllerScript.anim.Play("Swing",0,0f);
+        //weaponControllerScript.anim.Play("Swing",0,0f);
 
         yield return new WaitForSeconds(cooldown);
 

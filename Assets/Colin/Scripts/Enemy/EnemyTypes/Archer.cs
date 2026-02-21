@@ -42,6 +42,11 @@ public class Archer : MonoBehaviour
         // shoot animation
         // back to normal anitmation
         GameObject arrow = Instantiate(arrowPrefab, transform.position, eyes.transform.rotation);
+        Invoke("CanMove", 1);
+    }
+
+    void CanMove()
+    {
         enemyMovement.canMove = true;
     }
 }

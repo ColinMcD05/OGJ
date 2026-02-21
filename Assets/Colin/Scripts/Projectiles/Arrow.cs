@@ -13,4 +13,13 @@ public class Arrow : MonoBehaviour
     {
         transform.Translate(transform.up * Time.deltaTime * speed, Space.World);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<PlayerDeath>().Hit();
+        }
+        Destroy(this.gameObject);
+    }
 }

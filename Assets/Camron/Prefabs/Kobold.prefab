@@ -60,7 +60,6 @@ GameObject:
   - component: {fileID: 4189482716335137205}
   - component: {fileID: 2733919095484262723}
   - component: {fileID: 5107545650669301558}
-  - component: {fileID: 8451240800460102752}
   m_Layer: 6
   m_Name: Kobold
   m_TagString: Kobold
@@ -156,6 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   eyes: {fileID: 2051775781560879017}
+  agent: {fileID: 2733919095484262723}
   waypoints: []
   currentWaypointTarget: 0
   moveSpeed: 4
@@ -224,23 +224,3 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!1818360608 &8451240800460102752
-PositionConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7765896115247392177}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Weight: 1
-  m_TranslationAtRest: {x: -3.56188, y: 0.54841995, z: 0}
-  m_TranslationOffset: {x: 0, y: 0, z: 0}
-  m_AffectTranslationX: 0
-  m_AffectTranslationY: 0
-  m_AffectTranslationZ: 1
-  m_Active: 1
-  m_IsLocked: 1
-  m_Sources:
-  - sourceTransform: {fileID: 2988129149574980023}
-    weight: 1
