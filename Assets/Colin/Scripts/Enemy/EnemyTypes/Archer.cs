@@ -28,10 +28,10 @@ public class Archer : MonoBehaviour
             {
                 enemyMovement.canMove = false;
                 Invoke("Attack", windUp);
-                cooldownTimer = 5;
+                cooldownTimer = 7;
             }
         }
-        if (cooldownTimer > 0)
+        else if (cooldownTimer > 0)
         {
             cooldownTimer -= Time.deltaTime;
         }
@@ -41,7 +41,8 @@ public class Archer : MonoBehaviour
     {
         // shoot animation
         // back to normal anitmation
-        Instantiate(arrowPrefab, transform.position, eyes.transform.rotation);
+        GameObject arrow = Instantiate(arrowPrefab, transform.position, eyes.transform.rotation);
+        arrow.GetComponent<Arrow>().targetPosition = player.transform.position;
         enemyMovement.canMove = true;
     }
 }
