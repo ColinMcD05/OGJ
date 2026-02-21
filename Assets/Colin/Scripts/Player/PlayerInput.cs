@@ -6,13 +6,15 @@ public class PlayerInput : MonoBehaviour
 {
     [SerializeField] PlayerController playerController;
     [SerializeField] PlayerMovement playerMovement;
-    [SerializeField] WeaponControllerScript weaponControllerScript;
+    public WeaponControllerScript weaponControllerScript;
+    [SerializeField] GameObject weaponRotator;
 
     [SerializeField] private InputActionReference moveAction;
     [SerializeField] private InputActionReference attackAction;
     [SerializeField] private InputActionReference sprintAction;
 
-    [SerializeField] float cooldown=.5f; // Hardcoded (!)
+    Vector2 movementInput;
+    [SerializeField] float cooldown=.5f; // Hardcoded to the timing of the weapon swing (!)
     bool canAttack = true;
 
     void OnEnable()
@@ -39,7 +41,7 @@ public class PlayerInput : MonoBehaviour
 
     private void OnMovePerformed(InputAction.CallbackContext context)
     {
-        Vector2 movementInput = context.ReadValue<Vector2>();
+        movementInput = context.ReadValue<Vector2>();
         playerMovement.GetInput(movementInput);
     }
 
@@ -87,8 +89,13 @@ public class PlayerInput : MonoBehaviour
     {
         canAttack = false;
 
-
-        //weaponControllerScript.anim.Play("Swing",0,0f);
+        // Lock the Direction of the attack
+        if(movementInput.x>0) weaponRotator.transform.eulerAngles = new Vector3(0,0,-90f);
+        else if(movementInput.x<0) weaponRotator.transform.eulerAngles = new Vector3(0,0,90f);
+        else if(movementInput.y<0) weaponRotator.transform.eulerAngles = new Vector3(0,0,180f);
+        else if(movementInput.y>0) weaponRotator.transform.eulerAngles = Vector3.zero;
+        
+        weaponControllerScript.anim.Play("Swing",0,0f);
 
         yield return new WaitForSeconds(cooldown);
 
