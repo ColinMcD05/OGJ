@@ -11,4 +11,5 @@ public class TempWeapon : Weapon
     };
 
     public Temporary tempType;
+    public static int TempEnumCount = System.Enum.GetValues(typeof(Temporary)).Length;
 }

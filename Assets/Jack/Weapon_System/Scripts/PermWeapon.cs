@@ -1,10 +1,10 @@
 public class PermWeapon : Weapon
 {
-    // Class Stub
     public enum Permanent
     {
         Club = 0,
     };
 
     public Permanent permType;
+    public static int PermEnumCount = System.Enum.GetValues(typeof(Permanent)).Length;
 }

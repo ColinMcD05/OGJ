@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
@@ -7,10 +6,10 @@ public class PlayerController : MonoBehaviour
     public int lives;
     public int maxLives;
     public List<string> inventory;
-    List<List<TempWeapon>> tWeapons = new List<List<TempWeapon>>();
-    List<List<PermWeapon>> pWeapons = new List<List<PermWeapon>>();
-    int activeTWeapon = 0;
-    int activePWeapon = 0;
+    [HideInInspector] public List<List<TempWeapon>> tWeapons = new List<List<TempWeapon>>();
+    [HideInInspector] public List<List<PermWeapon>> pWeapons = new List<List<PermWeapon>>();
+    [HideInInspector] public int activeTWeapon = 0;
+    [HideInInspector] public int activePWeapon = 0;
     public bool inShadow;
 
     void Start()
@@ -18,8 +17,8 @@ public class PlayerController : MonoBehaviour
         lives = 3;
 
         // This is not an elegant solution
-        for(int i=0;i<4;i++) tWeapons.Add(new List<TempWeapon>());
-        pWeapons.Add(new List<PermWeapon>());
+        for(int i=0;i<PermWeapon.PermEnumCount;i++) tWeapons.Add(new List<TempWeapon>());
+        for(int i=0;i<TempWeapon.TempEnumCount;i++) pWeapons.Add(new List<PermWeapon>());
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -47,20 +46,5 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Number of Permanent Weapons: " + pWeapons[permIdx].Count);
             }
         }
-    }
-
-    // Player Input Callback(s)
-    public void OnToggleTempWeapon(InputValue value)
-    {
-        activeTWeapon++;
-        activeTWeapon%=4; // Hardcoded (!)
-        Debug.Log("Toggle TempWeapon: " + activeTWeapon);
-    }
-
-    public void OnTogglePermWeapon(InputValue value)
-    {
-        activePWeapon++;
-        activePWeapon%=4; // Hardcoded (!)
-        Debug.Log("Toggle PermWeapon: " + activePWeapon);
     }
 }

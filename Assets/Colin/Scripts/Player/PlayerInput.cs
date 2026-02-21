@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
+    [SerializeField] PlayerController playerController;
     [SerializeField] PlayerMovement playerMovement;
 
     [SerializeField] private InputActionReference moveAction;
@@ -55,5 +56,20 @@ public class PlayerInput : MonoBehaviour
     private void OnAttackCanceled(InputAction.CallbackContext context)
     {
         Debug.Log("No Attack!");
+    }
+
+    // Player Input Callback(s)
+    public void OnToggleTempWeapon(InputValue value)
+    {
+        playerController.activeTWeapon++;
+        playerController.activeTWeapon%=TempWeapon.TempEnumCount;
+        Debug.Log("Toggle TempWeapon: " + playerController.activeTWeapon);
+    }
+
+    public void OnTogglePermWeapon(InputValue value)
+    {
+        playerController.activePWeapon++;
+        playerController.activePWeapon%=PermWeapon.PermEnumCount;
+        Debug.Log("Toggle PermWeapon: " + playerController.activePWeapon);
     }
 }
