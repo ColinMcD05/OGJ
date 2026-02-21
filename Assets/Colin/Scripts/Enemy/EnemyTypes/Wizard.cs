@@ -26,7 +26,7 @@ public class Wizard : MonoBehaviour
             if (Vector3.Distance(player.transform.position, transform.position) < range)
             {
                 enemyMovement.canMove = false;
-                Invoke("Attack", windUp);
+                Attack();
                 cooldownTimer = 7;
             }
         }
@@ -42,7 +42,7 @@ public class Wizard : MonoBehaviour
         // back to normal anitmation
         GameObject fireball = Instantiate(fireballPrefab, transform.position, eyes.transform.rotation);
 
-        Invoke("CanMove", 1);
+        Invoke("CanMove", windUp + 1);
     }
 
     void CanMove()

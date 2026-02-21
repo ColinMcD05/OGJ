@@ -12,10 +12,10 @@ public class CameraMovement : MonoBehaviour
     {
         player = GameObject.Find("Player");
         Camera.main.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
-        leftClamp = -(Camera.main.orthographicSize * Camera.main.aspect) * 0.5f + 0.5f + Camera.main.transform.position.x;
-        rightClamp = (Camera.main.orthographicSize * Camera.main.aspect) * 0.5f - 0.5f + Camera.main.transform.position.x;
-        upClamp = Camera.main.orthographicSize * 0.5f - 0.5f + Camera.main.transform.position.y;
-        downClamp = -Camera.main.orthographicSize * 0.5f + 0.5f + Camera.main.transform.position.y;
+        leftClamp = -(Camera.main.orthographicSize * Camera.main.aspect) * 0.25f + 0.5f + Camera.main.transform.position.x;
+        rightClamp = (Camera.main.orthographicSize * Camera.main.aspect) * 0.25f - 0.5f + Camera.main.transform.position.x;
+        upClamp = Camera.main.orthographicSize * 0.25f - 0.5f + Camera.main.transform.position.y;
+        downClamp = -Camera.main.orthographicSize * 0.25f + 0.5f + Camera.main.transform.position.y;
 
         // Debug.Log($"{leftClamp} {rightClamp} {upClamp} {downClamp}");
     }

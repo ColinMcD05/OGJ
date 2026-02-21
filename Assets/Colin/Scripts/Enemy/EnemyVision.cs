@@ -102,6 +102,6 @@ public class EnemyVision : MonoBehaviour
         Transform target = player.transform;
 
         Quaternion targetRotation = Quaternion.LookRotation(transform.forward, (target.position - transform.position));
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, enemyMovement.rotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, (enemyMovement.rotationSpeed + 2)  * Time.deltaTime);
     }
 }

@@ -25,6 +25,7 @@ public class EnemyMovement : MonoBehaviour
     private int lookDirection = 1;
     private Quaternion lookRotation;
     public bool loop;
+    private Vector2 startPostition;
 
     [HideInInspector] public bool sawPlayer;
     [HideInInspector] public bool seePlayer;
@@ -33,15 +34,17 @@ public class EnemyMovement : MonoBehaviour
     {
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        agent.speed = moveSpeed;
 
         canMove = true;
         player = GameObject.Find("Player");
 
+        startPostition = transform.position;
     }
 
     private void Update()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+        //transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         if (canMove && !stunned)
         {
             if (!sawPlayer)
@@ -55,7 +58,7 @@ public class EnemyMovement : MonoBehaviour
             }
             else if (sawPlayer && !seePlayer)
             {
-                if (!AtLastKnown())
+                if (AtLastKnown())
                 {
                     GoToLastKnown();
                     lookRotation = transform.rotation * Quaternion.Euler(0, 0, 30);
@@ -132,7 +135,6 @@ public class EnemyMovement : MonoBehaviour
         }
         if (lookTime >= 5)
         {
-            agent.SetDestination(waypoints[currentWaypointTarget].position);
             sawPlayer = false;
         }
     }
@@ -141,7 +143,6 @@ public class EnemyMovement : MonoBehaviour
     {
         Transform target = player.transform;
 
-        transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
         agent.SetDestination(target.position);
         lastKnown = target.position;
     }
@@ -153,14 +154,12 @@ public class EnemyMovement : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(transform.forward, (target - transform.position));
         eyes.transform.rotation = Quaternion.Slerp(eyes.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-
-        transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
         agent.SetDestination(target);
     }
 
     bool AtLastKnown()
     {
-        return agent.transform.position == lastKnown;
+        return agent.hasPath;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
