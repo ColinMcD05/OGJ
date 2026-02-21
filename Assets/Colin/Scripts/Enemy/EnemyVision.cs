@@ -1,6 +1,7 @@
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static UnityEngine.GraphicsBuffer;
 
 public class EnemyVision : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class EnemyVision : MonoBehaviour
                 enemyMovement.seePlayer = false;
                 return;
             }
+            ChangeAngle();
             enemyMovement.sawPlayer = true;
             enemyMovement.seePlayer = true;
             Debug.Log("Caught");
@@ -87,5 +89,13 @@ public class EnemyVision : MonoBehaviour
         angleInDegrees += eulerY;
 
         return new Vector2(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
+    }
+
+    private void ChangeAngle()
+    {
+        Transform target = player.transform;
+
+        Quaternion targetRotation = Quaternion.LookRotation(transform.forward, (target.position - transform.position));
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, enemyMovement.rotationSpeed * Time.deltaTime);
     }
 }
