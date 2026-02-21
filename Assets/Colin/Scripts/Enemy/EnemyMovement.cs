@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
+using System.Collections.Generic;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -62,7 +63,10 @@ public class EnemyMovement : MonoBehaviour
 
     void Patrol()
     {
-        if (waypoints == null || waypoints.Length == 0) return;
+        if (waypoints == null || waypoints.Length == 0)
+        {
+            return;
+        }
         if (waitTime > 0f)
         {
             waitTime -= Time.deltaTime;
@@ -81,7 +85,7 @@ public class EnemyMovement : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
         if ((transform.position - target.position).sqrMagnitude < reachDistance * reachDistance)
         {
-            if (loop)
+            if (!loop)
             {
                 if (currentWaypointTarget == waypoints.Length - 1)
                 {
@@ -125,9 +129,6 @@ public class EnemyMovement : MonoBehaviour
     void ChasePlayer()
     {
         Transform target = player.transform;
-
-        Quaternion targetRotation = Quaternion.LookRotation(transform.forward, (target.position - transform.position));
-        eyes.transform.rotation = Quaternion.Slerp(eyes.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
         transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
         lastKnown = target.position;
