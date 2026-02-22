@@ -54,11 +54,13 @@ public class EnemyMovement : MonoBehaviour
         {
             if (!sawPlayer)
             {
-                Patrol();
+                Patrol(); 
+                ChangeAnimator();
             }
             else if (sawPlayer && seePlayer)
             {
                 ChasePlayer();
+                ChangeAnimator();
                 lookTime = 0;
             }
             else if (sawPlayer && !seePlayer)
@@ -66,15 +68,16 @@ public class EnemyMovement : MonoBehaviour
                 if (AtLastKnown())
                 {
                     GoToLastKnown();
+                    ChangeAnimator();
                     lookRotation = transform.rotation * Quaternion.Euler(0, 0, 30);
                 }
                 else
                 {
                     LookForPlayer();
+                    ChangeAnimator();
                 }
             }
         }
-            ChangeAnimator();
     }
 
     void Patrol()

@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
         if (inControl)
         {
             Movement();
+            ChangeAnimator();
         }
         if (isSprinting && sprintTimer > 0)
         {
@@ -45,7 +46,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Sprint();
         }
-        ChangeAnimator();
     }
 
     public void GetInput(Vector2 movement)
@@ -89,8 +89,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void ChangeAnimator()
     {
-        if (playerMovement.x > 0.01 || playerMovement.x < -0.01)
+        if (playerMovement.x > 0.1 || playerMovement.x < -0.1)
         {
+            spriteRenderer.sprite = sprite[1];
             if (playerMovement.x > 0.01)
             {
                 spriteRenderer.flipX = false;
@@ -99,8 +100,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 spriteRenderer.flipX = true;
             }
-            spriteRenderer.sprite = sprite[1];
-            Debug.Log("This Sprite");
         }
         else if (playerMovement.y > 0.01)
         {

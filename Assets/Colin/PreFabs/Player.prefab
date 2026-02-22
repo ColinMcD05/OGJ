@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: -5514251185424170730}
   - component: {fileID: 3455220854803920161}
   - component: {fileID: -487120831723298911}
-  - component: {fileID: 6860990527749982887}
+  - component: {fileID: 8980151306667568375}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -426,7 +426,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   spriteRenderer: {fileID: 7590500270667343578}
   playerRigidbody: {fileID: 7211031528267339157}
-  playerAnimator: {fileID: 6860990527749982887}
   playerMovement: {x: 0, y: 0}
   inControl: 0
   isSprinting: 0
@@ -489,7 +488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dba84b12c03cb3547b0008a9243c463d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDeath
---- !u!95 &6860990527749982887
+--- !u!95 &8980151306667568375
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -499,7 +498,7 @@ Animator:
   m_GameObject: {fileID: 7654489093977032034}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 55232a8bcf577814f89d0d3ed303a30b, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
