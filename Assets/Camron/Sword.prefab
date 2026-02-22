@@ -190,3 +190,4 @@ MonoBehaviour:
   _id: 0
   _durability: 10
   tempType: 0
+  playerController: {fileID: 0}
