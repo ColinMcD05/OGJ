@@ -809,8 +809,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e23367548fb2b4e8b115c5b5ff63fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Jack.PlayerController
-  lives: 0
-  maxLives: 0
+  lives: 5
+  maxLives: 5
   inShadow: 0
   isCaught: 0
   activeWeaponIdx: 0

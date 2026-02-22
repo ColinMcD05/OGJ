@@ -187,7 +187,7 @@ public class EnemyMovement : MonoBehaviour
         {
             agent.isStopped = true;
             canMove = false;
-            Invoke("CanMove", 3);
+            Invoke("CanMove", 10);
         }
     }
 

@@ -1,5 +1,4 @@
-using System;
-using Unity.VisualScripting;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -41,18 +40,18 @@ public class NextLevel : MonoBehaviour
     void ChangeLevel()
     {
         player.transform.position = new Vector3(0, 0, 0);
+        GameObject.Find("Main Camera").transform.position = new Vector3(0, 0, -10);
         GameObject.Find("Player").gameObject.GetComponent<PlayerMovement>().enabled = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     void CalculateScore()
     {
-        foreach (int collectable in gameManager.currentCollectables)
+        for (int collectable =0; collectable < gameManager.currentCollectables.Count; collectable ++)
         {
-            gainedScore += gameManager.currentCollectables[0];
-            gameManager.currentCollectables.RemoveAt(0);
+            gainedScore += gameManager.currentCollectables[collectable];
         }
-
+        gameManager.currentCollectables.Clear();
         /*
         foreach (TempWeapon.Temporary weaponType in playerController.weaponsDict.Keys)
         {
