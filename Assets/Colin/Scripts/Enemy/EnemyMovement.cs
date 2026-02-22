@@ -11,6 +11,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Animator enemyAnimator;
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] Sprite[] sprite;
 
     [SerializeField] Transform[] waypoints;
     public int currentWaypointTarget = 0;
@@ -199,6 +200,7 @@ public class EnemyMovement : MonoBehaviour
         if (agent.velocity.x > 0.01 || agent.velocity.x < -0.01)
         {
             enemyAnimator.SetInteger("Sprite", 1);
+            spriteRenderer.sprite = sprite[1];
             if (agent.velocity.x > 0.01)
             {
                 spriteRenderer.flipX = false;
@@ -209,11 +211,13 @@ public class EnemyMovement : MonoBehaviour
         else if (agent.velocity.y > 0.01)
         {
             enemyAnimator.SetInteger("Sprite", 2);
+            spriteRenderer.sprite = sprite[2];
             enemyAnimator.SetBool("isMoving", true);
         }
         else if (agent.velocity.y < -0.01)
         {
             enemyAnimator.SetInteger("Sprite", 0);
+            spriteRenderer.sprite = sprite[0];
             enemyAnimator.SetBool("isMoving", true);
         }
         else

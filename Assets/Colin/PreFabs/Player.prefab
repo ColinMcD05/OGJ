@@ -256,6 +256,7 @@ GameObject:
   - component: {fileID: -5514251185424170730}
   - component: {fileID: 3455220854803920161}
   - component: {fileID: -487120831723298911}
+  - component: {fileID: 6860990527749982887}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -272,7 +273,7 @@ Transform:
   m_GameObject: {fileID: 7654489093977032034}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.022913, y: -23.310698, z: 0}
+  m_LocalPosition: {x: 9.5, y: -23.483, z: 0}
   m_LocalScale: {x: 3.0508142, y: 3.0508142, z: 3.0508142}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -425,11 +426,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   spriteRenderer: {fileID: 7590500270667343578}
   playerRigidbody: {fileID: 7211031528267339157}
+  playerAnimator: {fileID: 6860990527749982887}
   playerMovement: {x: 0, y: 0}
   inControl: 0
   isSprinting: 0
   playerSpeed: 3
   isSlimed: 0
+  sprite:
+  - {fileID: 21300000, guid: 2e1c1d83530c496439274db001c8f938, type: 2}
+  - {fileID: 21300000, guid: ed0ecbbea5eea084aaafb15d606733ba, type: 2}
+  - {fileID: 21300000, guid: 701e61f9f76c3f745960f9a2a3235cfb, type: 2}
   walkSpeed: 3
   sprintSpeed: 5
   stamina: 10
@@ -483,3 +489,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dba84b12c03cb3547b0008a9243c463d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDeath
+--- !u!95 &6860990527749982887
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7654489093977032034}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 55232a8bcf577814f89d0d3ed303a30b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

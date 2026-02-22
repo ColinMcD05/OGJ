@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2468659899855462806}
   - component: {fileID: 3105748898496195113}
   - component: {fileID: 369054069881657849}
+  - component: {fileID: 1842515984251360687}
   m_Layer: 6
   m_Name: Fighter
   m_TagString: Dark Elf
@@ -126,6 +127,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   eyes: {fileID: 8116815900917738926}
   agent: {fileID: 3105748898496195113}
+  enemyAnimator: {fileID: 1842515984251360687}
+  spriteRenderer: {fileID: 4938447635323217997}
+  sprite:
+  - {fileID: 21300000, guid: 77aae2c916ff9ce4fac1c0bf1a043175, type: 2}
+  - {fileID: 21300000, guid: d3657bf0fa759454abe4d918a11e2eb9, type: 2}
+  - {fileID: 21300000, guid: 63b57309c8121174c847d0bddf2a3cea, type: 2}
   waypoints: []
   currentWaypointTarget: 0
   moveSpeed: 4
@@ -227,6 +234,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!95 &1842515984251360687
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7918849369836809389}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d4757faf7fa1c1c43a0903237f4b5e77, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8116815900917738926
 GameObject:
   m_ObjectHideFlags: 0

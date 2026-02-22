@@ -45,6 +45,15 @@ public class PlayerMovement : MonoBehaviour
         {
             Sprint();
         }
+        if (isSprinting)
+        {
+            playerAnimator.speed *= 1.5f;
+        }
+        else
+        {
+            playerAnimator.speed /= 1.5f;
+
+        }
         ChangeAnimator();
     }
 
@@ -56,15 +65,6 @@ public class PlayerMovement : MonoBehaviour
     void Movement()
     {
         transform.Translate(playerMovement * Time.deltaTime * playerSpeed);
-        /*if (playerMovement.x < 0)
-        {
-            spriteRenderer.flipX = true;
-        }
-        else if (playerMovement.x > 0)
-        {
-            spriteRenderer.flipX = false;
-        }
-        */
     }
 
     public void Sprint()
