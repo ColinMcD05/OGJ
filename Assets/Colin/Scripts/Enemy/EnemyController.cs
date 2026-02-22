@@ -14,8 +14,17 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public void Stunned()
+    public void Stunned(int stunDamage)
     {
+        stunHealth -= stunDamage;
+        if (stunHealth <= 0)
+        {
+            gameObject.GetComponent<EnemyMovement>().enabled = false;
+        }
+    }
 
+    void Unstun()
+    {
+        gameObject.GetComponent<EnemyMovement>().enabled = true;
     }
 }
