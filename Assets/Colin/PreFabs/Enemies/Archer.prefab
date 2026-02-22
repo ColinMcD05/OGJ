@@ -167,7 +167,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d67cfecc6fbef2141934fec729f9b47b, type: 2}
   waypoints: []
   currentWaypointTarget: 0
-  moveSpeed: 4
+  moveSpeed: 5
   reachDistance: 0.1
   waitTime: 3
   rotationSpeed: 5

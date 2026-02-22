@@ -49170,6 +49170,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 754369658743389609, guid: 56dd824538d44da44ada48321440946e, type: 3}
+      propertyPath: sprintSpeed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7654489093977032034, guid: 56dd824538d44da44ada48321440946e, type: 3}
       propertyPath: m_Name
       value: Player
