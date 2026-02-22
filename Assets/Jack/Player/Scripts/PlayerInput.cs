@@ -12,8 +12,9 @@ using System;
         // public static event Action<Vector2,float> onAttack;
         public static event Action<Vector2> onAttack;
         public static event Action<TempWeapon.Temporary,int> onTempToggle;
+        public static event Action onSprint;
 
-        Vector2 playerDir = new Vector2(0,1);
+    Vector2 playerDir = new Vector2(0,1);
 
 
         void Start()
@@ -42,5 +43,10 @@ using System;
             int nextIdx = ((int)playerController.activeWeaponIdx+1)%TempWeapon.TempEnumCount;
             // playerController.activeWeaponIdx=(TempWeapon.Temporary)nextIdx;
             onTempToggle?.Invoke((TempWeapon.Temporary)nextIdx,0); // "0" is an artifact of SwitchTempWeapon
+        }
+
+        public void OnSprint(InputValue value)
+        {
+            onSprint?.Invoke();
         }
     }

@@ -30,6 +30,16 @@ public class PlayerMovement : MonoBehaviour
         inControl = true;
     }
 
+    void OnEnable()
+    {
+        PlayerInput.onSprint += Sprint;
+    }
+
+    void OnDisable()
+    {
+        PlayerInput.onSprint -= Sprint;
+    }
+
     void Update()
     {
         if (inControl)
