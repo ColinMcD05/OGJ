@@ -252,3 +252,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f63dd5b82c2d849a4a92edb7272fb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kobold
+  enemyController: {fileID: 7310993867323397840}
+  enemyMovement: {fileID: 4189482716335137205}
+  eyes: {fileID: 2051775781560879017}
+  health: 0
+  stunHealth: 0
+  windUp: 1
+  damage: 1
