@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Colin/MainMenu.unity
+    guid: ddae0915c2bb4ae4980a7b8fb9d5152c
+  - enabled: 1
     path: Assets/Camron/Camron_Tutorial.unity
     guid: 337ef95d9b66c7940b60332aaf07332b
   - enabled: 1

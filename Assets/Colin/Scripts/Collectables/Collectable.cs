@@ -15,7 +15,7 @@ public class Collectable : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            gameManager.AddScore(collectableScore);
+            gameManager.AddCollectable(collectableScore);
             Destroy(this.gameObject);
         }
     }
