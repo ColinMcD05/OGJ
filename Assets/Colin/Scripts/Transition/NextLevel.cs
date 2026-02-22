@@ -62,6 +62,7 @@ public class NextLevel : MonoBehaviour
             }
         }
         */
+        gameManager.AddScore(gainedScore);
         ChangeLevel();
     }
 
