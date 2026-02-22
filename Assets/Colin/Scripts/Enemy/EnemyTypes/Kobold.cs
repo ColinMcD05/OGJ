@@ -26,7 +26,6 @@ public class Kobold : MonoBehaviour
     void Attack()
     {
         player.GetComponent<PlayerDeath>().Hit(damage);
-        player.GetComponent<PlayerMovement>().isSlimed = true;
         enemyMovement.canMove = false;
         Invoke("CanMove", 3);
     }

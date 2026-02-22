@@ -400,7 +400,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8afafa5d54f31524ebfe3e118cbe4984, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -429,6 +429,7 @@ MonoBehaviour:
   inControl: 0
   isSprinting: 0
   playerSpeed: 3
+  isSlimed: 0
   walkSpeed: 3
   sprintSpeed: 5
   stamina: 10
