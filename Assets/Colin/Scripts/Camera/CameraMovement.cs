@@ -24,6 +24,10 @@ public class CameraMovement : MonoBehaviour
     {
         MoveCamera();
         Debug.Log(Random.Range(1, 3));
+        if (player.GetComponent<PlayerMovement>().playerDir == Vector2.zero)
+        {
+            Camera.main.transform.position = player.transform.position;
+        }
     }
 
     void MoveCamera()
