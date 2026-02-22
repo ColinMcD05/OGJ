@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 public class PlayerDeath : MonoBehaviour
 {
 
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip hurt;
     float invincibilityFrames;
 
     private void Update()
@@ -15,19 +17,21 @@ public class PlayerDeath : MonoBehaviour
 
     public void Hit(int damage)
     {
+        audioSource.PlayOneShot(hurt, 0.6f);
         if (invincibilityFrames <= 0)
         {
             gameObject.GetComponent<PlayerController>().lives -= damage;
             invincibilityFrames = 4;
             if (gameObject.GetComponent<PlayerController>().lives <= 0)
             {
-                Death();
+
+                Invoke("Death", 2);
             }
         }
     }
     public void Death()
     {
-        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(0));
+        SceneManager.LoadScene(7);
     }
 }
 

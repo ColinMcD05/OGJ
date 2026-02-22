@@ -155,4 +155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9352214b9c07ec84490e0ca8af9d9fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectable
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 88316d506ecc82540b227908d5326654, type: 3}
   collectableScore: 0

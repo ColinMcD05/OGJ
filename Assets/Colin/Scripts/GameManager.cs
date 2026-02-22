@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex >= 6)
+        if (SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 7)
         {
             CleanAndDestroy();
         }

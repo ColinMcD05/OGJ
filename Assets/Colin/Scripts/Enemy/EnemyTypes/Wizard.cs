@@ -8,6 +8,8 @@ public class Wizard : MonoBehaviour
     [SerializeField] GameObject eyes;
     [SerializeField] GameObject fireballPrefab;
     [SerializeField] GameObject magicMisslePrefab;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip magic;
 
     public int health;
     public int stunHealth;
@@ -54,15 +56,23 @@ public class Wizard : MonoBehaviour
         {
             GameObject fireball = Instantiate(fireballPrefab, transform.position, eyes.transform.rotation);
             Invoke("CanMove", windUp + 1);
+            Invoke("MagicSound", 2);
         }
         else
         {
             GameObject magicMissle = Instantiate(magicMisslePrefab, transform.position, eyes.transform.rotation);
+            Invoke("CanMove", windUp); 
+            audioSource.PlayOneShot(magic);
         }
     }
 
     void CanMove()
     {
         enemyMovement.canMove = true;
+    }
+
+    void MagicSount()
+    {
+        audioSource.PlayOneShot(magic);
     }
 }
