@@ -18,7 +18,7 @@ public class Fireball : MonoBehaviour
     {
         if (transform.localScale.x <= 3)
         {
-            transform.localScale += new Vector3(1.5f, 1.5f, 1.5f) * Time.deltaTime;
+            transform.localScale += new Vector3(7.5f, 7.5f, 7.5f) * Time.deltaTime;
             target = player.transform.position;
         }
         else if (transform.position != target)
@@ -51,7 +51,7 @@ public class Fireball : MonoBehaviour
 
         for (int i = 0; i < 4; i++)
         {
-            Instantiate(miniFireballPrefab, transform.position, Quaternion.Euler(0, 0, 45 + 90 * i));
+            GameObject miniFireball = Instantiate(miniFireballPrefab, transform.position, Quaternion.Euler(0, 0, 45 + 90 * i));
         }
     }
 
