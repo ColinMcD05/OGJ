@@ -10,8 +10,8 @@ namespace Jack
         [HideInInspector] public Dictionary<TempWeapon.Temporary,List<TempWeapon>> weaponsDict;
             
         [HideInInspector] public TempWeapon.Temporary activeWeaponIdx = 0;
-        [HideInInspector] public Weapon activeWeapon {get; private set;}
-        public static event Action<Weapon> equippedWeapon;
+        [HideInInspector] public TempWeapon activeWeapon {get; private set;}
+        public static event Action<TempWeapon> equippedWeapon;
 
         void OnEnable()
         {
@@ -47,11 +47,6 @@ namespace Jack
 
         void SwitchTempWeapon(TempWeapon.Temporary nextTempIdx, int count=0)
         {
-            
-            /*
-                The first slot of each weapon type
-                Watch out for null (!)
-            */
             if(weaponsDict[nextTempIdx]!=null)
             {
                 activeWeaponIdx=nextTempIdx;
