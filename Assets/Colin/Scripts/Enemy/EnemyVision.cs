@@ -12,6 +12,7 @@ public class EnemyVision : MonoBehaviour
     GameObject player;
     public float visionRange = 10;
     [Range(1,360)] public float detectionAngle = 45;
+    private PlayerController playerController;
 
     void Awake()
     {
@@ -31,6 +32,7 @@ public class EnemyVision : MonoBehaviour
                 return;
             }
             ChangeAngle();
+            playerController.isCaught = true;
             enemyMovement.sawPlayer = true;
             enemyMovement.seePlayer = true;
             Debug.Log("Caught");

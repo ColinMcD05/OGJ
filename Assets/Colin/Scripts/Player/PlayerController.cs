@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public int activeTWeapon = 0;
     [HideInInspector] public int activePWeapon = 0;
     public bool inShadow;
+    public bool isCaught;
 
     void Start()
     {

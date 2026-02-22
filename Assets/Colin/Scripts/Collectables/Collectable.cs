@@ -21,7 +21,7 @@ public class Collectable : MonoBehaviour
         {
             audioSource.PlayOneShot(audioClip);
             gameManager.AddCollectable(collectableScore);
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }
