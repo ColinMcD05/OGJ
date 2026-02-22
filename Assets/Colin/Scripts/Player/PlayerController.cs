@@ -6,8 +6,8 @@ public class PlayerController : MonoBehaviour
     public int lives;
     public int maxLives;
     public List<string> inventory;
-    [HideInInspector] public List<List<TempWeapon>> tWeapons = new List<List<TempWeapon>>();
-    [HideInInspector] public List<List<PermWeapon>> pWeapons = new List<List<PermWeapon>>();
+    [HideInInspector] public List<List<Weapon>> tWeapons = new List<List<Weapon>>();
+    [HideInInspector] public List<List<Weapon>> pWeapons = new List<List<Weapon>>();
     [HideInInspector] public int activeTWeapon = 0;
     [HideInInspector] public int activePWeapon = 0;
     public bool inShadow;
@@ -17,8 +17,8 @@ public class PlayerController : MonoBehaviour
         lives = 3;
 
         // This is not an elegant solution
-        for(int i=0;i<PermWeapon.PermEnumCount;i++) tWeapons.Add(new List<TempWeapon>());
-        for(int i=0;i<TempWeapon.TempEnumCount;i++) pWeapons.Add(new List<PermWeapon>());
+        for(int i=0;i<PermWeapon.PermEnumCount;i++) tWeapons.Add(new List<Weapon>());
+        for(int i=0;i<TempWeapon.TempEnumCount;i++) pWeapons.Add(new List<Weapon>());
     }
 
     void OnTriggerEnter2D(Collider2D collision)

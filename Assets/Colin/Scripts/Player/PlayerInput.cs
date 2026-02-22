@@ -6,7 +6,7 @@ public class PlayerInput : MonoBehaviour
 {
     [SerializeField] PlayerController playerController;
     [SerializeField] PlayerMovement playerMovement;
-    public WeaponControllerScript weaponControllerScript;
+    // public WeaponControllerScript weaponControllerScript;
     [SerializeField] GameObject weaponRotator;
 
     [SerializeField] private InputActionReference moveAction;
@@ -95,7 +95,7 @@ public class PlayerInput : MonoBehaviour
         else if(movementInput.y<0) weaponRotator.transform.eulerAngles = new Vector3(0,0,180f);
         else if(movementInput.y>0) weaponRotator.transform.eulerAngles = Vector3.zero;
         
-        weaponControllerScript.anim.Play("Swing",0,0f);
+        // weaponControllerScript.anim.Play("Swing",0,0f);
 
         yield return new WaitForSeconds(cooldown);
 
