@@ -67,14 +67,29 @@ public class PlayerMovement : MonoBehaviour
 
     public void Sprint()
     {
-        isSprinting = !isSprinting;
-        if (playerSpeed == walkSpeed)
+        if (!isSlimed)
         {
-            playerSpeed = sprintSpeed;
+            isSprinting = !isSprinting;
+            if (playerSpeed == walkSpeed)
+            {
+                playerSpeed = sprintSpeed;
+            }
+            else
+            {
+                playerSpeed = walkSpeed;
+            }
         }
-        else
-        {
-            playerSpeed = walkSpeed;
-        }
+    }
+
+    public void Slimed()
+    {
+        playerSpeed = playerSpeed * 0.75f;
+        Invoke("Cleaned", 5);
+    }
+
+    private void Cleaned()
+    {
+        playerSpeed = walkSpeed;
+        isSlimed = false;
     }
 }
