@@ -12,7 +12,7 @@ public class Collectable : MonoBehaviour
     void Awake()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        audioSource = GameObject.Find("Collectables").GetComponent<AudioSource>();
+        audioSource = GameObject.Find("Audio").GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

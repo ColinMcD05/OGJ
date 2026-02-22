@@ -1,13 +1,15 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] Rigidbody2D playerRigidbody;
+    Animator playerAnim;
 
     // Variables not subject to change, but need to be called upon
-    [HideInInspector] public Vector2 playerMovement;
+    public Vector2 playerDir;
     [HideInInspector] public bool inControl;
     [HideInInspector] public bool isSprinting;
     private float sprintTimer;
@@ -22,9 +24,20 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        playerAnim = GetComponent<Animator>();
         sprintTimer = stamina;
         playerSpeed = walkSpeed;
         inControl = true;
+    }
+
+    void OnEnable()
+    {
+        PlayerInput.onSprint += Sprint;
+    }
+
+    void OnDisable()
+    {
+        PlayerInput.onSprint -= Sprint;
     }
 
     void Update()
@@ -32,7 +45,6 @@ public class PlayerMovement : MonoBehaviour
         if (inControl)
         {
             Movement();
-            ChangeAnimator();
         }
         if (isSprinting && sprintTimer > 0)
         {
@@ -46,17 +58,24 @@ public class PlayerMovement : MonoBehaviour
         {
             Sprint();
         }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
-    public void GetInput(Vector2 movement)
+    public void GetInput(Vector2 playerInput)
     {
-        playerMovement = movement;
+        playerDir = playerInput;
+        if (playerDir.x < 0) playerAnim.Play("WalkWest");
+        else if (playerDir.x > 0) playerAnim.Play("WalkEast");
+        else if (playerDir.y < 0) playerAnim.Play("WalkSouth");
+        else if (playerDir.y > 0) playerAnim.Play("WalkNorth");
+        else playerAnim.Play("Idle");
     }
 
-    void Movement()
-    {
-        transform.Translate(playerMovement * Time.deltaTime * playerSpeed);
-    }
+    void Movement() =>
+        transform.Translate(playerDir * playerSpeed * Time.deltaTime);
 
     public void Sprint()
     {
@@ -85,29 +104,5 @@ public class PlayerMovement : MonoBehaviour
     {
         playerSpeed = walkSpeed;
         isSlimed = false;
-    }
-
-    private void ChangeAnimator()
-    {
-        if (playerMovement.x > 0.3 || playerMovement.x < -0.3)
-        {
-            spriteRenderer.sprite = sprite[1];
-            if (playerMovement.x > 0.01)
-            {
-                spriteRenderer.flipX = false;
-            }
-            else
-            {
-                spriteRenderer.flipX = true;
-            }
-        }
-        else if (playerMovement.y > 0.01)
-        {
-            spriteRenderer.sprite = sprite[2];
-        }
-        else if (playerMovement.y < -0.01)
-        {
-            spriteRenderer.sprite = sprite[0];
-        }
     }
 }

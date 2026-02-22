@@ -1,7 +1,5 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
-using System.Collections.Generic;
+using System;
 using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
@@ -34,6 +32,7 @@ public class EnemyMovement : MonoBehaviour
 
     [HideInInspector] public bool sawPlayer;
     [HideInInspector] public bool seePlayer;
+    public static event Action<bool> enemySaw;
 
     void Awake()
     {
@@ -125,7 +124,7 @@ public class EnemyMovement : MonoBehaviour
             {
                 currentWaypointTarget = (currentWaypointTarget + 1) % waypoints.Length;
             }
-            waitTime = Random.Range(1f, 3f);
+            waitTime = UnityEngine.Random.Range(1f, 3f);
         }
         else
         {
@@ -155,6 +154,7 @@ public class EnemyMovement : MonoBehaviour
                 agent.SetDestination(startPostition);
             }
             sawPlayer = false;
+            enemySaw?.Invoke(false);
         }
     }
 
@@ -187,7 +187,7 @@ public class EnemyMovement : MonoBehaviour
         {
             agent.isStopped = true;
             canMove = false;
-            Invoke("CanMove", 3);
+            Invoke("CanMove", 10);
         }
     }
 

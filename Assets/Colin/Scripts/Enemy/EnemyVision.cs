@@ -1,7 +1,5 @@
-using UnityEditor.Experimental.GraphView;
+using System;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEngine.GraphicsBuffer;
 
 public class EnemyVision : MonoBehaviour
 {
@@ -11,6 +9,7 @@ public class EnemyVision : MonoBehaviour
     LayerMask playerMask;
     GameObject player;
     public float visionRange = 10;
+    public static event Action<bool> enemySees;
     [Range(1,360)] public float detectionAngle = 45;
     private PlayerController playerController;
 
@@ -32,9 +31,9 @@ public class EnemyVision : MonoBehaviour
                 return;
             }
             ChangeAngle();
-            playerController.isCaught = true;
             enemyMovement.sawPlayer = true;
             enemyMovement.seePlayer = true;
+            enemySees?.Invoke(true);
             Debug.Log("Caught");
         }
         else
@@ -79,7 +78,7 @@ public class EnemyVision : MonoBehaviour
         return player.GetComponent<PlayerController>().inShadow;
     }
 
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
         UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, visionRange);
@@ -90,7 +89,7 @@ public class EnemyVision : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, transform.position + angleOne * visionRange);
         Gizmos.DrawLine(transform.position, transform.position + angleTwo * visionRange);
-    }
+    }*/
 
     private Vector2 DirectionFromAngle(float eulerY, float angleInDegrees)
     {

@@ -1,5 +1,4 @@
-using System;
-using Unity.VisualScripting;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +9,7 @@ public class NextLevel : MonoBehaviour
     bool canPrint = false;
     int gainedScore;
     float amountAdded;
+    GameObject player;
     PlayerController playerController;
 
     void Awake()
@@ -30,6 +30,7 @@ public class NextLevel : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             playerController = collision.gameObject.GetComponent<PlayerController>();
+            player = collision.gameObject;
             collision.gameObject.GetComponent<PlayerMovement>().enabled = false;
             Destroy(GameObject.Find("Enemies"));
             CalculateScore();
@@ -38,28 +39,31 @@ public class NextLevel : MonoBehaviour
 
     void ChangeLevel()
     {
+        player.transform.position = new Vector3(0, 0, 0);
+        GameObject.Find("Main Camera").transform.position = new Vector3(0, 0, -10);
+        GameObject.Find("Player").gameObject.GetComponent<PlayerMovement>().enabled = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        GameObject.Find("Player").gameObject.GetComponent<PlayerMovement>().enabled = false;
     }
 
     void CalculateScore()
     {
-        foreach (int collectable in gameManager.currentCollectables)
+        for (int collectable =0; collectable < gameManager.currentCollectables.Count; collectable ++)
         {
-            gainedScore += gameManager.currentCollectables[0];
-            gameManager.currentCollectables.RemoveAt(0);
+            gainedScore += gameManager.currentCollectables[collectable];
         }
-
-        Invoke("ChangeLevel", 3);
-
+        gameManager.currentCollectables.Clear();
         /*
-        foreach (TempWeapon.Temporary weaponType in playerController.weaponDict)
+        foreach (TempWeapon.Temporary weaponType in playerController.weaponsDict.Keys)
         {
-            gainedScore += playerController.weaponDict[weaponType][0].Count * 100 * ((int)weaponType + 1);
+            if ((int)weaponType < 4)
+            {
+                gainedScore += playerController.weaponsDict[weaponType + 1].Count * 100 * ((int)weaponType);
+                playerController.weaponsDict[weaponType + 1].Clear();
+            }
         }
-
-        canPrint = true;
         */
+        gameManager.AddScore(gainedScore);
+        ChangeLevel();
     }
 
     void PrintScore()

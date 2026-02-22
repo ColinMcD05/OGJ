@@ -25,7 +25,7 @@ public class PlayerDeath : MonoBehaviour
             if (gameObject.GetComponent<PlayerController>().lives <= 0)
             {
 
-                Invoke("Death", 2);
+                Invoke("Death", 0);
             }
         }
     }

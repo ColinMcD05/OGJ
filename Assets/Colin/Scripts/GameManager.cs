@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public GameManager instance;
     public int score;
-    [HideInInspector] public List<int> currentCollectables;
+    public List<int> currentCollectables;
     [HideInInspector] public Dictionary<string, int> collectedItems;
 
     [Header("Persistant Objects")]

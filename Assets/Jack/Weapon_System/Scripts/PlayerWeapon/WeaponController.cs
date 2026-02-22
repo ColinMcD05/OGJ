@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -6,6 +7,10 @@ namespace Jack
     public class WeaponController : MonoBehaviour
     {
         Animator playerWeaponAnim;
+        [SerializeField] AudioClip swordAudio;
+        [SerializeField] AudioClip bowAudio;
+        [SerializeField] AudioClip clubAudio;
+        AudioSource audioSource;
         [SerializeField] TempWeapon hitBox;
         bool canAttack=true;
         [SerializeField] float cooldown=.5f;
@@ -13,18 +18,19 @@ namespace Jack
         void OnEnable()
         {
             PlayerController.equippedWeapon += Equip;
-            PlayerInputScript.onAttack += Attack;
+            PlayerInput.onAttack += Attack;
         }
 
         void OnDisable()
         {
             PlayerController.equippedWeapon -= Equip;
-            PlayerInputScript.onAttack -= Attack;
+            PlayerInput.onAttack -= Attack;
         }
 
         void Start()
         {
             playerWeaponAnim = transform.GetChild(0).GetComponent<Animator>(); // This is a terrible assumption (!)
+            audioSource = GetComponent<AudioSource>();
         }
 
         void Equip(TempWeapon activeWeapon)
@@ -94,10 +100,33 @@ namespace Jack
             else if(direction.y<0) transform.eulerAngles = new Vector3(0,0,180f);
             else if(direction.y>0) transform.eulerAngles = Vector3.zero;
             
-            if(hitBox.tempType!=TempWeapon.Temporary.Bow)
-                playerWeaponAnim.Play("Swing",0,0f);
-            else
-                playerWeaponAnim.Play("Shoot",0,0f);
+            switch(hitBox.tempType)
+            {
+                case TempWeapon.Temporary.Sword:
+                    playerWeaponAnim.Play("SwordSwing",0,0f);
+                    audioSource.pitch = 1f;
+                    audioSource.PlayOneShot(swordAudio);
+                    break;
+                case TempWeapon.Temporary.Bow:
+                    playerWeaponAnim.Play("Shoot",0,0f);
+                    audioSource.pitch = 1f;
+                    audioSource.PlayOneShot(bowAudio);
+                    break;
+                case TempWeapon.Temporary.Axe:
+                    playerWeaponAnim.Play("AxeSwing",0,0f);
+                    audioSource.pitch = .5f;
+                    audioSource.PlayOneShot(swordAudio);
+                    break;
+                default:
+                    playerWeaponAnim.Play("ClubSwing",0,0f);
+                    audioSource.pitch = 1f;
+                    audioSource.PlayOneShot(clubAudio);
+                    break;
+            }
+            // if(hitBox.tempType!=TempWeapon.Temporary.Bow)
+            //     playerWeaponAnim.Play("Swing",0,0f);
+            // else
+            //     playerWeaponAnim.Play("Shoot",0,0f);
             yield return new WaitForSeconds(cooldown);
             canAttack=true;
         }
