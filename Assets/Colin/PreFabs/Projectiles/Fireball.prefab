@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3942267627555589341}
   - component: {fileID: 7664258934199974752}
   - component: {fileID: 6685802009547955489}
-  - component: {fileID: 3797690317958883252}
+  - component: {fileID: 184790637579897300}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1345090881070704552}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.02, y: -23.08, z: 0}
+  m_LocalPosition: {x: 9.511, y: -23.48, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -109,14 +109,14 @@ MonoBehaviour:
   miniFireballPrefab: {fileID: 8146349736125051633, guid: cda4eafcf22146d48af8ade76f120d40, type: 3}
   speed: 5
   damage: 2
---- !u!58 &3797690317958883252
+--- !u!58 &184790637579897300
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1345090881070704552}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -139,9 +139,9 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.0001
+  m_Offset: {x: 0, y: -0.0013408661}
+  m_Radius: 0.10234642

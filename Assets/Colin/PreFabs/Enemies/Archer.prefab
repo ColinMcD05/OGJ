@@ -62,7 +62,6 @@ GameObject:
   - component: {fileID: 356124919322549667}
   - component: {fileID: 3340638868860129219}
   - component: {fileID: 2047354965319311852}
-  - component: {fileID: 5279288750012426965}
   m_Layer: 6
   m_Name: Archer
   m_TagString: Dark Elf
@@ -160,7 +159,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   eyes: {fileID: 339823372060172670}
   agent: {fileID: 2047354965319311852}
-  enemyAnimator: {fileID: 5279288750012426965}
   spriteRenderer: {fileID: 194961196366441444}
   sprite:
   - {fileID: 21300000, guid: ed85cbbd3ca27d94ab4c86810655421e, type: 2}
@@ -279,28 +277,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!95 &5279288750012426965
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2854506569808502665}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2b12badcdc32aef43ba1a2c4a044da92, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &5958112404480068603
 PrefabInstance:
   m_ObjectHideFlags: 0
