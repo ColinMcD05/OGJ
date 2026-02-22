@@ -71,7 +71,7 @@ public class Wizard : MonoBehaviour
         enemyMovement.canMove = true;
     }
 
-    void MagicSount()
+    void MagicSound()
     {
         audioSource.PlayOneShot(magic);
     }

@@ -49,11 +49,15 @@ public class NextLevel : MonoBehaviour
             gainedScore += gameManager.currentCollectables[0];
             gameManager.currentCollectables.RemoveAt(0);
         }
-        /* Gain score based on items
-        foreach (int collectabel in gameManager.)
-        {
 
+        Invoke("ChangeLevel", 3);
+
+        /*
+        foreach (TempWeapon.Temporary weaponType in playerController.weaponDict)
+        {
+            gainedScore += playerController.weaponDict[weaponType][0].Count * 100 * ((int)weaponType + 1);
         }
+
         canPrint = true;
         */
     }
