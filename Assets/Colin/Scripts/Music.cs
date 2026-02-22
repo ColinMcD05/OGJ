@@ -14,9 +14,6 @@ public class Music : MonoBehaviour
 
     private void Update()
     {
-        /*if()
-        {
-
-        }*/
+        
     }
 }
