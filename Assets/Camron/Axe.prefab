@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1681336750237888616}
   - component: {fileID: 3485617853951358032}
   - component: {fileID: -1080062712885404005}
+  - component: {fileID: 3411758492454100542}
   m_Layer: 0
   m_Name: Axe
   m_TagString: Weapon
@@ -206,4 +207,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Collectable
   audioSource: {fileID: 0}
   audioClip: {fileID: 8300000, guid: 88316d506ecc82540b227908d5326654, type: 3}
+  collectableScore: 0
+--- !u!114 &3411758492454100542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899478248254584089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9352214b9c07ec84490e0ca8af9d9fb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Collectable
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 0}
   collectableScore: 0

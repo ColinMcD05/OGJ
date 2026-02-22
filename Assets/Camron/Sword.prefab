@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4085244165618940066}
   - component: {fileID: 116999561109988991}
   - component: {fileID: 3156346701490226281}
+  - component: {fileID: -438304074184376611}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Weapon
@@ -191,3 +192,18 @@ MonoBehaviour:
   _durability: 10
   tempType: 0
   playerController: {fileID: 0}
+--- !u!114 &-438304074184376611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8739139976828064929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9352214b9c07ec84490e0ca8af9d9fb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Collectable
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 0}
+  collectableScore: 0
