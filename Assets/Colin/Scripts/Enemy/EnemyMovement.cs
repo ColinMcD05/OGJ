@@ -199,21 +199,21 @@ public class EnemyMovement : MonoBehaviour
 
     private void ChangeAnimator()
     {
-        if (agent.velocity.x > 0.01 || agent.velocity.x < -0.01)
+        if (agent.velocity.x > 0.3 || agent.velocity.x < -0.3)
         {
             spriteRenderer.sprite = sprite[1];
-            if (agent.velocity.x > 0.01)
+            if (agent.velocity.x > 0)
             {
                 spriteRenderer.flipX = false;
                 return;
             }
             spriteRenderer.flipX = true;
         }
-        else if (agent.velocity.y > 0.01)
+        else if (agent.velocity.y > 0.001)
         {
             spriteRenderer.sprite = sprite[2];
         }
-        else if (agent.velocity.y < -0.01)
+        else if (agent.velocity.y < -0.001)
         {
             spriteRenderer.sprite = sprite[0];
         }

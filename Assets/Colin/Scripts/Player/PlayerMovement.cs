@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void ChangeAnimator()
     {
-        if (playerMovement.x > 0.1 || playerMovement.x < -0.1)
+        if (playerMovement.x > 0.3 || playerMovement.x < -0.3)
         {
             spriteRenderer.sprite = sprite[1];
             if (playerMovement.x > 0.01)
