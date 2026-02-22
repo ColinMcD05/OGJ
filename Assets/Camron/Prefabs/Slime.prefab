@@ -160,7 +160,9 @@ MonoBehaviour:
   eyes: {fileID: 1920232518392157421}
   agent: {fileID: 2025060077020016495}
   spriteRenderer: {fileID: 1929480605177960837}
-  sprite: []
+  sprite:
+  - {fileID: 21300000, guid: 15fde72f7a10c934aa356e9a64004382, type: 2}
+  - {fileID: 21300000, guid: 6d0a5d0f3535d524f9241174c1bda2b2, type: 2}
   waypoints: []
   currentWaypointTarget: 0
   moveSpeed: 4
