@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Jack
@@ -8,7 +6,7 @@ namespace Jack
     public class WeaponController : MonoBehaviour
     {
         Animator playerWeaponAnim;
-        [SerializeField] Weapon hitBox;
+        [SerializeField] TempWeapon hitBox;
         bool canAttack=true;
         [SerializeField] float cooldown=.5f;
 
@@ -29,9 +27,8 @@ namespace Jack
             playerWeaponAnim = transform.GetChild(0).GetComponent<Animator>(); // This is a terrible assumption (!)
         }
 
-        void Equip(Weapon activeWeapon)
+        void Equip(TempWeapon activeWeapon)
         {
-            // hitBox = activeWeapon;
             if(activeWeapon==null)
             {
                 playerWeaponAnim.gameObject.SetActive(false);
@@ -39,22 +36,23 @@ namespace Jack
             }
 
             HardCopyWeapon(activeWeapon);
-            // // Set the properties of the active weapon
-            // SpriteRenderer activeSR = hitBox.GetComponent<SpriteRenderer>()
-            //     ?? hitBox.AddComponent<SpriteRenderer>();
-            // activeSR.sprite = activeWeapon.sr.sprite;
-            // Rigidbody2D activeRB = hitBox.GetComponent<Rigidbody2D>()
-            //     ?? hitBox.AddComponent<Rigidbody2D>();
-            // HardCopyRB(activeRB,activeWeapon.rb);
         }
 
-        void HardCopyWeapon(Weapon activeWeapon)
+        void HardCopyWeapon(TempWeapon activeWeapon)
         {
             playerWeaponAnim.gameObject.SetActive(true);
             hitBox.sr.sprite = activeWeapon.sr.sprite;
             hitBox.sr.color = activeWeapon.sr.color;
             HardCopyRB(hitBox.rb,activeWeapon.rb);
             HardCopyBC(hitBox.bc,activeWeapon.bc);
+            hitBox._damage = activeWeapon._damage;
+            hitBox._stun = activeWeapon._stun;
+            hitBox._cooldown = activeWeapon._cooldown;
+            hitBox._name = activeWeapon._name;
+            hitBox._rank = activeWeapon._rank;
+            hitBox._id = activeWeapon._id;
+            hitBox._durability = activeWeapon._durability;
+            hitBox.tempType = activeWeapon.tempType;
         }
 
         void HardCopyRB(Rigidbody2D activeRB,Rigidbody2D activeWRB)
@@ -79,6 +77,7 @@ namespace Jack
         // void Attack(Vector2 direction,float cooldown)
         void Attack(Vector2 direction)
         {
+            if(hitBox._name=="") return; // This is fragile (!)
             if(!canAttack) return;
             // StartCoroutine(AttackRoutine(direction,cooldown));
             StartCoroutine(AttackRoutine(direction));
@@ -95,7 +94,10 @@ namespace Jack
             else if(direction.y<0) transform.eulerAngles = new Vector3(0,0,180f);
             else if(direction.y>0) transform.eulerAngles = Vector3.zero;
             
-            playerWeaponAnim.Play("Swing",0,0f);
+            if(hitBox.tempType!=TempWeapon.Temporary.Bow)
+                playerWeaponAnim.Play("Swing",0,0f);
+            else
+                playerWeaponAnim.Play("Shoot",0,0f);
             yield return new WaitForSeconds(cooldown);
             canAttack=true;
         }

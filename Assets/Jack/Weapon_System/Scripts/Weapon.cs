@@ -12,11 +12,11 @@ public abstract class Weapon : MonoBehaviour
 
 
     // Weapon Data
-    [SerializeField] float _damage;
-    [SerializeField] float _stun;
-    [SerializeField] float _cooldown;
-    [SerializeField] string _name;
-    [SerializeField] int _rank;
+    public float _damage;
+    public float _stun;
+    public float _cooldown;
+    public string _name;
+    public int _rank;
     public int _id;
     bool _pickedUp = false;
 
@@ -36,17 +36,13 @@ public abstract class Weapon : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(gameObject.tag!="Player" && col.CompareTag("Player"))
+        if(
+            (
+                gameObject.tag!="Player"
+                && col.GetComponent<TempWeapon>()==null
+            )
+            && col.CompareTag("Player"))
         {
-            // Debug.Log("Equipped by the Player!");
-            // This is so slop!
-            // SpriteRenderer targetSR = col.GetComponent<PlayerInput>()
-            //     .weaponControllerScript
-            //     .hitbox.GetComponent<SpriteRenderer>();
-            // Alter the currently held weapon for the player, which is terrible here!
-            // targetSR.sprite = GetComponent<SpriteRenderer>().sprite;
-            // targetSR.color = GetComponent<SpriteRenderer>().color;
-
             transform.gameObject.SetActive(false);
         }
     }
