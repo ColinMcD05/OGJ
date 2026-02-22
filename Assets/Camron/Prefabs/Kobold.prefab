@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyVision
   enemyMovement: {fileID: 4189482716335137205}
-  visionRange: 3
-  detectionAngle: 45
+  visionRange: 6
+  detectionAngle: 60
 --- !u!1 &7765896115247392177
 GameObject:
   m_ObjectHideFlags: 0
