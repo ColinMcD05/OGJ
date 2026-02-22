@@ -25,7 +25,7 @@ public class Slime : MonoBehaviour
     void Attack()
     {
         player.GetComponent<PlayerDeath>().Hit(damage);
-        player.GetComponent<PlayerMovement>().isSlimed = true;
+        player.GetComponent<PlayerMovement>().Slimed();
         enemyMovement.canMove = false;
         Invoke("CanMove", 3);
     }
