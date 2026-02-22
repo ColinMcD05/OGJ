@@ -1,12 +1,20 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: c93ef422a8dec2b4da65233f9c79090b
+=======
+guid: bb431734b75eb51429e94a8d645fad0b
+>>>>>>> Stashed changes
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
+<<<<<<< Updated upstream
     enableMipMap: 0
+=======
+    enableMipMap: 1
+>>>>>>> Stashed changes
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -34,6 +42,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
+<<<<<<< Updated upstream
     filterMode: 0
     aniso: 1
     mipBias: 0
@@ -44,6 +53,18 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
+=======
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 1
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 0
+>>>>>>> Stashed changes
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -52,9 +73,15 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
+<<<<<<< Updated upstream
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
+=======
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 0
+>>>>>>> Stashed changes
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -93,6 +120,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< Updated upstream
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -294,11 +322,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+=======
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+>>>>>>> Stashed changes
     outline: []
     customData: 
     physicsShape: []
     bones: []
+<<<<<<< Updated upstream
     spriteID: d911ef7009ed74b4293786de91371167
+=======
+    spriteID: 
+>>>>>>> Stashed changes
     internalID: 0
     vertices: []
     indices: 
@@ -306,6 +356,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
+<<<<<<< Updated upstream
       entries:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
@@ -319,6 +370,10 @@ TextureImporter:
       Shadow Heist Weapon Sprites_6: 1045986187
       Shadow Heist Weapon Sprites_7: -839574419
       Shadow Heist Weapon Sprites_8: -915943649
+=======
+      entries: []
+    nameFileIdTable: {}
+>>>>>>> Stashed changes
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
