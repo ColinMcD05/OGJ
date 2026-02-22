@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public bool isSprinting;
     private float sprintTimer;
     [HideInInspector] public float playerSpeed;
+    [HideInInspector] public bool isSlimed;
 
     // Variables subject to change in inspector
     public float walkSpeed;
