@@ -2,13 +2,27 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PlayerDeath : MonoBehaviour
 {
-    
-    public void Hit()
+
+    float invincibilityFrames;
+
+    private void Update()
     {
-        gameObject.GetComponent<PlayerController>().lives--;
-        if (gameObject.GetComponent<PlayerController>().lives-- == 0)
+        if (invincibilityFrames > 0)
         {
-            Death();
+            invincibilityFrames -= Time.deltaTime;
+        }
+    }
+
+    public void Hit(int damage)
+    {
+        if (invincibilityFrames <= 0)
+        {
+            gameObject.GetComponent<PlayerController>().lives -= damage;
+            invincibilityFrames = 4;
+            if (gameObject.GetComponent<PlayerController>().lives <= 0)
+            {
+                Death();
+            }
         }
     }
     public void Death()

@@ -13,4 +13,9 @@ public class EnemyController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void Stunned()
+    {
+
+    }
 }

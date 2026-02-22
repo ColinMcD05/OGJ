@@ -25,7 +25,8 @@ public class EnemyMovement : MonoBehaviour
     private int lookDirection = 1;
     private Quaternion lookRotation;
     public bool loop;
-    private Vector2 startPostition;
+    private Vector3 startPostition;
+    private Quaternion originalRotation;
 
     [HideInInspector] public bool sawPlayer;
     [HideInInspector] public bool seePlayer;
@@ -40,6 +41,7 @@ public class EnemyMovement : MonoBehaviour
         player = GameObject.Find("Player");
 
         startPostition = transform.position;
+        originalRotation = eyes.transform.rotation;
     }
 
     private void Update()
@@ -92,6 +94,11 @@ public class EnemyMovement : MonoBehaviour
             eyes.transform.rotation = targetRotation;
         }
 
+        if (waypoints.Length == 0 && agent.transform.position == startPostition && eyes.transform.rotation != originalRotation)
+        {
+            eyes.transform.rotation = originalRotation;
+        }
+
         if ((transform.position - target.position).sqrMagnitude < reachDistance * reachDistance)
         {
             if (!loop && waypoints.Length > 1)
@@ -135,6 +142,10 @@ public class EnemyMovement : MonoBehaviour
         }
         if (lookTime >= 5)
         {
+            if (waypoints.Length == 0)
+            {
+                agent.SetDestination(startPostition);
+            }
             sawPlayer = false;
         }
     }
@@ -167,14 +178,12 @@ public class EnemyMovement : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             canMove = false;
+            Invoke("CanMove", 2);
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void CanMove()
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            canMove = true;
-        }
+        canMove = true;
     }
 }

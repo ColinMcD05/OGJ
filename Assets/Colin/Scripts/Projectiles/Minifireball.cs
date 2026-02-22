@@ -24,7 +24,7 @@ public class Minifireball : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<PlayerDeath>().Hit();
+            collision.GetComponent<PlayerDeath>().Hit(damage);
         }
         else if (collision.gameObject.layer == LayerMask.GetMask("Enemies"))
         {
