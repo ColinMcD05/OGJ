@@ -45,15 +45,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Sprint();
         }
-        if (isSprinting)
-        {
-            playerAnimator.speed *= 1.5f;
-        }
-        else
-        {
-            playerAnimator.speed /= 1.5f;
-
-        }
         ChangeAnimator();
     }
 
