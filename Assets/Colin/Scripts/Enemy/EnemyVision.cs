@@ -1,3 +1,4 @@
+using System;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -11,6 +12,7 @@ public class EnemyVision : MonoBehaviour
     LayerMask playerMask;
     GameObject player;
     public float visionRange = 10;
+    public static event Action<bool> enemySees;
     [Range(1,360)] public float detectionAngle = 45;
     private PlayerController playerController;
 
@@ -34,6 +36,7 @@ public class EnemyVision : MonoBehaviour
             ChangeAngle();
             enemyMovement.sawPlayer = true;
             enemyMovement.seePlayer = true;
+            enemySees?.Invoke(true);
             Debug.Log("Caught");
         }
         else

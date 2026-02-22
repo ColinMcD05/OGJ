@@ -9,7 +9,7 @@ using System;
         public int maxLives;
         public bool inShadow;
         public bool isCaught=false;
-        public event Action<bool> onCaught;
+        public static event Action<bool> onCaught;
         [HideInInspector] public Dictionary<TempWeapon.Temporary,List<TempWeapon>> weaponsDict;
             
         [HideInInspector] public TempWeapon.Temporary activeWeaponIdx = 0;
@@ -19,11 +19,13 @@ using System;
         void OnEnable()
         {
             PlayerInput.onTempToggle += SwitchTempWeapon;
+            EnemyVision.enemySees += OnCaught;
         }
 
         void OnDisable()
         {
             PlayerInput.onTempToggle -= SwitchTempWeapon;
+            EnemyVision.enemySees -= OnCaught;
         }
             
         void Start()
@@ -43,7 +45,7 @@ using System;
                 && !col.CompareTag("Player"))
             {
                 weaponsDict[temp.tempType].Add(temp); // Initializes List
-                if(activeWeapon!=null)
+                if(activeWeapon==null)
                     SwitchTempWeapon(temp.tempType);
             }
         }
@@ -68,5 +70,10 @@ using System;
                 }
             }
             equippedWeapon?.Invoke(activeWeapon);
+        }
+
+        public void OnCaught(bool seen)
+        {
+            onCaught?.Invoke(seen);
         }
     }
