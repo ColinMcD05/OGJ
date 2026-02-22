@@ -32,5 +32,6 @@ namespace Jack
 
         void Movement() =>
             transform.Translate(playerDir*playerSpeed*Time.deltaTime);
+
     }
 }
