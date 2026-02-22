@@ -149,9 +149,9 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 742217379740570637}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
@@ -166,7 +166,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &2080547727081188839
 MonoBehaviour:
@@ -502,7 +502,6 @@ GameObject:
   - component: {fileID: 2391816313618159053}
   - component: {fileID: 5389315159829619400}
   - component: {fileID: 523106800253595804}
-  - component: {fileID: 1360502116945815878}
   - component: {fileID: 70005452883072261}
   m_Layer: 3
   m_Name: Player
@@ -835,19 +834,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1360502116945815878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7654489093977032034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb3c637581fc657438634dc33e1965b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Jack.PlayerMovementScript
-  playerSpeed: 5
 --- !u!114 &70005452883072261
 MonoBehaviour:
   m_ObjectHideFlags: 0

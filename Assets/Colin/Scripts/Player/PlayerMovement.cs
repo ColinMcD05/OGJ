@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        playerAnim = GetComponent<Animator>();
         sprintTimer = stamina;
         playerSpeed = walkSpeed;
         inControl = true;
