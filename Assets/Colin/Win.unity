@@ -149,7 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d5903607e0fd4e4e8f6338c5fd8d07a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WinUI
-  scoreText: {fileID: 0}
+  scoreText: {fileID: 655973020}
+  waitTime: 5
 --- !u!114 &55656295
 MonoBehaviour:
   m_ObjectHideFlags: 0

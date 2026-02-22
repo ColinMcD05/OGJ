@@ -29,6 +29,7 @@ public class EnemyMovement : MonoBehaviour
     public bool loop;
     private Vector3 startPostition;
     private Quaternion originalRotation;
+    private float switchTimer = 1;
     
 
     [HideInInspector] public bool sawPlayer;
@@ -199,23 +200,40 @@ public class EnemyMovement : MonoBehaviour
 
     private void ChangeAnimator()
     {
-        if (agent.velocity.x > 0.3 || agent.velocity.x < -0.3)
+        if (!gameObject.CompareTag("Slime"))
         {
-            spriteRenderer.sprite = sprite[1];
-            if (agent.velocity.x > 0)
+            if (agent.velocity.x > 0.3 || agent.velocity.x < -0.3)
             {
-                spriteRenderer.flipX = false;
-                return;
+                spriteRenderer.sprite = sprite[1];
+                if (agent.velocity.x > 0)
+                {
+                    spriteRenderer.flipX = false;
+                    return;
+                }
+                spriteRenderer.flipX = true;
             }
-            spriteRenderer.flipX = true;
+            else if (agent.velocity.y > 0.001)
+            {
+                spriteRenderer.sprite = sprite[2];
+            }
+            else if (agent.velocity.y < -0.001)
+            {
+                spriteRenderer.sprite = sprite[0];
+            }
         }
-        else if (agent.velocity.y > 0.001)
+        else
         {
-            spriteRenderer.sprite = sprite[2];
-        }
-        else if (agent.velocity.y < -0.001)
-        {
-            spriteRenderer.sprite = sprite[0];
+            switchTimer -= Time.deltaTime;
+            if (switchTimer <= 0 && spriteRenderer == sprite[0])
+            {
+                spriteRenderer.sprite = sprite[1];
+                switchTimer = 1;
+            }
+            else if (switchTimer <= 0 && spriteRenderer == sprite[1])
+            {
+                spriteRenderer.sprite = sprite[0];
+                switchTimer = 1;
+            }
         }
     }
 }
