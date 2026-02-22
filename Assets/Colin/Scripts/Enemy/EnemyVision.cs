@@ -32,7 +32,6 @@ public class EnemyVision : MonoBehaviour
                 return;
             }
             ChangeAngle();
-            playerController.isCaught = true;
             enemyMovement.sawPlayer = true;
             enemyMovement.seePlayer = true;
             Debug.Log("Caught");

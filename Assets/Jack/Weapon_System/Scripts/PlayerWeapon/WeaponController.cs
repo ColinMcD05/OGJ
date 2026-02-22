@@ -18,13 +18,13 @@ namespace Jack
         void OnEnable()
         {
             PlayerController.equippedWeapon += Equip;
-            PlayerInputScript.onAttack += Attack;
+            PlayerInput.onAttack += Attack;
         }
 
         void OnDisable()
         {
             PlayerController.equippedWeapon -= Equip;
-            PlayerInputScript.onAttack -= Attack;
+            PlayerInput.onAttack -= Attack;
         }
 
         void Start()

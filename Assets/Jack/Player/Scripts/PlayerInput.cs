@@ -2,14 +2,12 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
 
-namespace Jack
-{
     [RequireComponent(typeof(PlayerController))]
-    [RequireComponent(typeof(PlayerMovementScript))]
-    public class PlayerInputScript : MonoBehaviour
+    [RequireComponent(typeof(PlayerMovement))]
+    public class PlayerInput : MonoBehaviour
     {
         PlayerController playerController;
-        PlayerMovementScript playerMovement;
+        PlayerMovement playerMovement;
 
         // public static event Action<Vector2,float> onAttack;
         public static event Action<Vector2> onAttack;
@@ -21,7 +19,7 @@ namespace Jack
         void Start()
         {
             playerController = GetComponent<PlayerController>();
-            playerMovement = GetComponent<PlayerMovementScript>();
+            playerMovement = GetComponent<PlayerMovement>();
         }
 
 
@@ -46,4 +44,3 @@ namespace Jack
             onTempToggle?.Invoke((TempWeapon.Temporary)nextIdx,0); // "0" is an artifact of SwitchTempWeapon
         }
     }
-}

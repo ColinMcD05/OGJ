@@ -30,16 +30,16 @@ public class CameraMovement : MonoBehaviour
     {
         if (player.transform.position.x <= leftClamp || player.transform.position.x >= rightClamp)
         {
-            transform.Translate(new Vector2(player.GetComponent<PlayerMovement>().playerMovement.x * Time.deltaTime * player.GetComponent<PlayerMovement>().playerSpeed, 0));
-            leftClamp += player.GetComponent<PlayerMovement>().playerMovement.x * Time.deltaTime * player.GetComponent<PlayerMovement>().playerSpeed;
-            rightClamp += player.GetComponent<PlayerMovement>().playerMovement.x * Time.deltaTime * player.GetComponent<PlayerMovement>().playerSpeed;
+            transform.Translate(new Vector2(player.GetComponent<PlayerMovement>().playerDir.x * Time.deltaTime * player.GetComponent<PlayerMovement>().playerSpeed, 0));
+            leftClamp += player.GetComponent<PlayerMovement>().playerDir.x * Time.deltaTime * player.GetComponent<PlayerMovement>().playerSpeed;
+            rightClamp += player.GetComponent<PlayerMovement>().playerDir.x * Time.deltaTime * player.GetComponent<PlayerMovement>().playerSpeed;
             // Debug.Log("Past!");
         }
         if (player.transform.position.y <= downClamp || player.transform.position.y >= upClamp)
         {
-            transform.Translate(new Vector2(0, player.GetComponent<PlayerMovement>().playerMovement.y * Time.deltaTime * player.GetComponent<PlayerMovement>().playerSpeed));
-            upClamp += player.GetComponent<PlayerMovement>().playerMovement.y * Time.deltaTime * player.GetComponent<PlayerMovement>().playerSpeed;
-            downClamp += player.GetComponent<PlayerMovement>().playerMovement.y * Time.deltaTime * player.GetComponent<PlayerMovement>().playerSpeed;
+            transform.Translate(new Vector2(0, player.GetComponent<PlayerMovement>().playerDir.y * Time.deltaTime * player.GetComponent<PlayerMovement>().playerSpeed));
+            upClamp += player.GetComponent<PlayerMovement>().playerDir.y * Time.deltaTime * player.GetComponent<PlayerMovement>().playerSpeed;
+            downClamp += player.GetComponent<PlayerMovement>().playerDir.y * Time.deltaTime * player.GetComponent<PlayerMovement>().playerSpeed;
         }
     }
 }
