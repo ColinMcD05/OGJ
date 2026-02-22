@@ -78,7 +78,7 @@ public class EnemyVision : MonoBehaviour
         return player.GetComponent<PlayerController>().inShadow;
     }
 
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
         UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, visionRange);
@@ -89,7 +89,7 @@ public class EnemyVision : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, transform.position + angleOne * visionRange);
         Gizmos.DrawLine(transform.position, transform.position + angleTwo * visionRange);
-    }
+    }*/
 
     private Vector2 DirectionFromAngle(float eulerY, float angleInDegrees)
     {

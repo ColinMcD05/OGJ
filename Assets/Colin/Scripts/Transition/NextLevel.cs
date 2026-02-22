@@ -41,8 +41,8 @@ public class NextLevel : MonoBehaviour
     void ChangeLevel()
     {
         player.transform.position = new Vector3(0, 0, 0);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         GameObject.Find("Player").gameObject.GetComponent<PlayerMovement>().enabled = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     void CalculateScore()
@@ -53,8 +53,7 @@ public class NextLevel : MonoBehaviour
             gameManager.currentCollectables.RemoveAt(0);
         }
 
-        Invoke("ChangeLevel", 1);
-
+        /*
         foreach (TempWeapon.Temporary weaponType in playerController.weaponsDict.Keys)
         {
             if ((int)weaponType < 4)
@@ -63,7 +62,8 @@ public class NextLevel : MonoBehaviour
                 playerController.weaponsDict[weaponType + 1].Clear();
             }
         }
-        canPrint = true;
+        */
+        ChangeLevel();
     }
 
     void PrintScore()

@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     {
         // Initialize weaponsDict
         weaponsDict = new Dictionary<TempWeapon.Temporary,List<TempWeapon>>();
+        weaponsDict[TempWeapon.Temporary.Club] = new List<TempWeapon>();
         weaponsDict[TempWeapon.Temporary.Sword] = new List<TempWeapon>();
         weaponsDict[TempWeapon.Temporary.Axe] = new List<TempWeapon>();
         weaponsDict[TempWeapon.Temporary.Bow] = new List<TempWeapon>();
