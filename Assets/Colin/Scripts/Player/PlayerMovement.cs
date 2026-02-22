@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] Rigidbody2D playerRigidbody;
-
+    [SerializeField] Animator playerAnimator;
     // Variables not subject to change, but need to be called upon
     [HideInInspector] public Vector2 playerMovement;
     [HideInInspector] public bool inControl;
@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private float sprintTimer;
     [HideInInspector] public float playerSpeed;
     [HideInInspector] public bool isSlimed;
+    [SerializeField] Sprite[] sprite;
 
     // Variables subject to change in inspector
     public float walkSpeed;
@@ -44,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Sprint();
         }
+        ChangeAnimator();
     }
 
     public void GetInput(Vector2 movement)
@@ -92,5 +94,36 @@ public class PlayerMovement : MonoBehaviour
     {
         playerSpeed = walkSpeed;
         isSlimed = false;
+    }
+
+    private void ChangeAnimator()
+    {
+        if (playerRigidbody.linearVelocity.x > 0.01 || playerRigidbody.linearVelocity.x < -0.01)
+        {
+            playerAnimator.SetInteger("Sprite", 1);
+            spriteRenderer.sprite = sprite[1];
+            if (playerRigidbody.linearVelocity.x > 0.01)
+            {
+                spriteRenderer.flipX = false;
+            }
+            spriteRenderer.flipX = true;
+            playerAnimator.SetBool("isMoving", true);
+        }
+        else if (playerRigidbody.linearVelocity.y > 0.01)
+        {
+            playerAnimator.SetInteger("Sprite", 2);
+            spriteRenderer.sprite = sprite[2];
+            playerAnimator.SetBool("isMoving", true);
+        }
+        else if (playerRigidbody.linearVelocity.y < -0.01)
+        {
+            playerAnimator.SetInteger("Sprite", 0);
+            spriteRenderer.sprite = sprite[0];
+            playerAnimator.SetBool("isMoving", true);
+        }
+        else
+        {
+            playerAnimator.SetBool("isMoving", false);
+        }
     }
 }

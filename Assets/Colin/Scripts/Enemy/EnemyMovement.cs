@@ -9,6 +9,8 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] GameObject eyes;
     private GameObject player;
     [SerializeField] NavMeshAgent agent;
+    [SerializeField] Animator enemyAnimator;
+    [SerializeField] SpriteRenderer spriteRenderer;
 
     [SerializeField] Transform[] waypoints;
     public int currentWaypointTarget = 0;
@@ -27,6 +29,7 @@ public class EnemyMovement : MonoBehaviour
     public bool loop;
     private Vector3 startPostition;
     private Quaternion originalRotation;
+    
 
     [HideInInspector] public bool sawPlayer;
     [HideInInspector] public bool seePlayer;
@@ -71,6 +74,7 @@ public class EnemyMovement : MonoBehaviour
                 }
             }
         }
+            ChangeAnimator();
     }
 
     void Patrol()
@@ -170,7 +174,7 @@ public class EnemyMovement : MonoBehaviour
 
     bool AtLastKnown()
     {
-        return agent.hasPath;
+            return agent.hasPath;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -188,5 +192,33 @@ public class EnemyMovement : MonoBehaviour
     private void CanMove()
     {
         canMove = true;
+    }
+
+    private void ChangeAnimator()
+    {
+        if (agent.velocity.x > 0.01 || agent.velocity.x < -0.01)
+        {
+            enemyAnimator.SetInteger("Sprite", 1);
+            if (agent.velocity.x > 0.01)
+            {
+                spriteRenderer.flipX = false;
+            }
+            spriteRenderer.flipX = true;
+            enemyAnimator.SetBool("isMoving", true);
+        }
+        else if (agent.velocity.y > 0.01)
+        {
+            enemyAnimator.SetInteger("Sprite", 2);
+            enemyAnimator.SetBool("isMoving", true);
+        }
+        else if (agent.velocity.y < -0.01)
+        {
+            enemyAnimator.SetInteger("Sprite", 0);
+            enemyAnimator.SetBool("isMoving", true);
+        }
+        else
+        {
+            enemyAnimator.SetBool("isMoving", false);
+        }
     }
 }
