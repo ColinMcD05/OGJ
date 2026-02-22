@@ -53,13 +53,16 @@ public class NextLevel : MonoBehaviour
             gameManager.currentCollectables.RemoveAt(0);
         }
 
-        Invoke("ChangeLevel", 3);
+        Invoke("ChangeLevel", 1);
 
-        foreach (TempWeapon.Temporary weaponType in playerController.weaponsDict)
+        foreach (TempWeapon.Temporary weaponType in playerController.weaponsDict.Keys)
         {
-            gainedScore += playerController.weaponsDict[weaponType].Count * 100 * ((int)weaponType + 1);
+            if ((int)weaponType < 4)
+            {
+                gainedScore += playerController.weaponsDict[weaponType + 1].Count * 100 * ((int)weaponType);
+                playerController.weaponsDict[weaponType + 1].Clear();
+            }
         }
-
         canPrint = true;
     }
 
