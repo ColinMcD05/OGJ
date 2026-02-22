@@ -11,7 +11,7 @@ namespace Jack
         public int maxLives;
         public bool inShadow;
         public bool isCaught=false;
-        public event Action<bool> onCaught;
+        public static event Action<bool> onCaught;
         [HideInInspector] public Dictionary<TempWeapon.Temporary,List<TempWeapon>> weaponsDict;
             
         [HideInInspector] public TempWeapon.Temporary activeWeaponIdx = 0;
@@ -21,11 +21,13 @@ namespace Jack
         void OnEnable()
         {
             PlayerInputScript.onTempToggle += SwitchTempWeapon;
+            EnemyVision.enemySees += OnCaught;
         }
 
         void OnDisable()
         {
             PlayerInputScript.onTempToggle -= SwitchTempWeapon;
+            EnemyVision.enemySees -= OnCaught;
         }
             
         void Start()
@@ -45,7 +47,7 @@ namespace Jack
                 && !col.CompareTag("Player"))
             {
                 weaponsDict[temp.tempType].Add(temp); // Initializes List
-                if(activeWeapon!=null)
+                if(activeWeapon==null)
                     SwitchTempWeapon(temp.tempType);
             }
         }
@@ -70,6 +72,11 @@ namespace Jack
                 }
             }
             equippedWeapon?.Invoke(activeWeapon);
+        }
+
+        public void OnCaught(bool seen)
+        {
+            onCaught?.Invoke(seen);
         }
     }
 }
