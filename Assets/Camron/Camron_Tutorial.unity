@@ -652,6 +652,7 @@ GameObject:
   - component: {fileID: 612021237}
   - component: {fileID: 612021236}
   - component: {fileID: 612021235}
+  - component: {fileID: 612021238}
   m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
@@ -779,6 +780,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &612021238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612021234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e9b29a8dbbf564ebdd95634d591c2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Shadow
+  fade: 0
 --- !u!4 &1329751568 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2988129149574980023, guid: e47d4b85ebfe57c46887825c3f5d5b30, type: 3}
