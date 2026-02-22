@@ -5,7 +5,6 @@ public class Slime : MonoBehaviour
     GameObject player;
     [SerializeField] EnemyController enemyController;
     [SerializeField] EnemyMovement enemyMovement;
-    [SerializeField] GameObject eyes;
 
     public int health;
     public int stunHealth;

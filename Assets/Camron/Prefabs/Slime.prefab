@@ -194,6 +194,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e7c2d906c222cd4380a77decd1dffdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Slime
+  enemyController: {fileID: 8084454582593157802}
+  enemyMovement: {fileID: 2900180743477925439}
+  health: 0
+  stunHealth: 0
+  windUp: 1
+  damage: 1
 --- !u!195 &2025060077020016495
 NavMeshAgent:
   m_ObjectHideFlags: 0
