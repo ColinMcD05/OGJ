@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c93ef422a8dec2b4da65233f9c79090b
+guid: 7e32c1de364e52c48a7bd23c30722cb9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -63,16 +63,16 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 2
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -85,7 +85,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Shadow Heist Weapon Sprites_0
+      name: Shadow Heist Kobold Sprites_0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,14 +112,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9d7b91c2b3b0674a8773e8f1357ae94
-      internalID: -1311668176
+      spriteID: e32b8bf39daccd94b8e396493f53d5aa
+      internalID: -1439325077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shadow Heist Weapon Sprites_1
+      name: Shadow Heist Kobold Sprites_1
       rect:
         serializedVersion: 2
         x: 32
@@ -134,14 +134,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2289a3ce3d9a1254b8178b38da3da978
-      internalID: 1066657899
+      spriteID: 895c418164d19f144b7c1512a0d4ccc9
+      internalID: 1169178912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shadow Heist Weapon Sprites_2
+      name: Shadow Heist Kobold Sprites_2
       rect:
         serializedVersion: 2
         x: 64
@@ -156,14 +156,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b62e5470b560b3f4ea76837771fa88c1
-      internalID: 1107327509
+      spriteID: a4c4de156ee0b384ebbab92fbdc336c6
+      internalID: -137171783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shadow Heist Weapon Sprites_3
+      name: Shadow Heist Kobold Sprites_3
       rect:
         serializedVersion: 2
         x: 0
@@ -178,14 +178,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5f3fcd415bf865458cb175fe6af76d0
-      internalID: -913630910
+      spriteID: 5f51fe9aba66c1a4ab9627c076319c41
+      internalID: 1596121455
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shadow Heist Weapon Sprites_4
+      name: Shadow Heist Kobold Sprites_4
       rect:
         serializedVersion: 2
         x: 32
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 571fad3d62d68184ca430f68f3e1d3f0
-      internalID: 1853991204
+      spriteID: 18b166f9bbfedff4f99698f82c0919b7
+      internalID: -560744337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shadow Heist Weapon Sprites_5
+      name: Shadow Heist Kobold Sprites_5
       rect:
         serializedVersion: 2
         x: 64
@@ -222,14 +222,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51782ea649f6d584288600d7dc674210
-      internalID: 1075222570
+      spriteID: 9217458ecd0c6be4a85579e3572017c8
+      internalID: -1863470522
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shadow Heist Weapon Sprites_6
+      name: Shadow Heist Kobold Sprites_6
       rect:
         serializedVersion: 2
         x: 0
@@ -244,14 +244,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d4f381f98034564ca4d4d9e69d1a027
-      internalID: 820071053
+      spriteID: 6af745123d30cbf47baf0dc72946ef78
+      internalID: -1663489212
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shadow Heist Weapon Sprites_7
+      name: Shadow Heist Kobold Sprites_7
       rect:
         serializedVersion: 2
         x: 32
@@ -266,14 +266,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91eead30e80b6494398efb265439658b
-      internalID: 713752169
+      spriteID: 2154a43c43df2ed4c9314d71d98f15dd
+      internalID: -1771681649
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shadow Heist Weapon Sprites_8
+      name: Shadow Heist Kobold Sprites_8
       rect:
         serializedVersion: 2
         x: 64
@@ -288,8 +288,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a293074c88d4ff4ab85ad6b05960df9
-      internalID: 118029578
+      spriteID: 870a727bd80f0c24282e263894d0b9b2
+      internalID: 1291280318
       vertices: []
       indices: 
       edges: []
@@ -298,7 +298,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 2afe0c6540164eb4aaed2639cae03515
+    spriteID: ac9226b9e43419744b469753441acc7c
     internalID: 0
     vertices: []
     indices: 
@@ -310,15 +310,15 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Shadow Heist Weapon Sprites_0: -1311668176
-      Shadow Heist Weapon Sprites_1: 1066657899
-      Shadow Heist Weapon Sprites_2: 1107327509
-      Shadow Heist Weapon Sprites_3: -913630910
-      Shadow Heist Weapon Sprites_4: 1853991204
-      Shadow Heist Weapon Sprites_5: 1075222570
-      Shadow Heist Weapon Sprites_6: 820071053
-      Shadow Heist Weapon Sprites_7: 713752169
-      Shadow Heist Weapon Sprites_8: 118029578
+      Shadow Heist Kobold Sprites_0: -1439325077
+      Shadow Heist Kobold Sprites_1: 1169178912
+      Shadow Heist Kobold Sprites_2: -137171783
+      Shadow Heist Kobold Sprites_3: 1596121455
+      Shadow Heist Kobold Sprites_4: -560744337
+      Shadow Heist Kobold Sprites_5: -1863470522
+      Shadow Heist Kobold Sprites_6: -1663489212
+      Shadow Heist Kobold Sprites_7: -1771681649
+      Shadow Heist Kobold Sprites_8: 1291280318
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

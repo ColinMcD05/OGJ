@@ -158,6 +158,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   eyes: {fileID: 2051775781560879017}
   agent: {fileID: 2733919095484262723}
+  spriteRenderer: {fileID: 0}
+  sprite:
+  - {fileID: 21300000, guid: fba76c8257345154ea5b06dc840ff0f1, type: 2}
+  - {fileID: 21300000, guid: ca6c94ba60bf4bf44bb00661d2148b62, type: 2}
+  - {fileID: 21300000, guid: 4cc32be7588f5424cbbd6cf872f8e533, type: 2}
   waypoints: []
   currentWaypointTarget: 0
   moveSpeed: 4

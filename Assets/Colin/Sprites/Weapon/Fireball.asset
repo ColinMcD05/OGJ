@@ -21,7 +21,7 @@ Sprite:
   m_IsPolygon: 0
   m_PackingTag: 
   m_RenderDataKey:
-    c93ef422a8dec2b4da65233f9c79090b: -915943649
+    c93ef422a8dec2b4da65233f9c79090b: 118029578
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:
@@ -219,4 +219,4 @@ Sprite:
     - {x: 0.04, y: 0.11}
   m_Bones: []
   m_ScriptableObjects: []
-  m_SpriteID: 85bdbcf4fb9cc804a908dcbe29c8617a
+  m_SpriteID: 4a293074c88d4ff4ab85ad6b05960df9
