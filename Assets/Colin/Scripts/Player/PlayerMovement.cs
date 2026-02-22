@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] Rigidbody2D playerRigidbody;
-    [SerializeField] Animator playerAnimator;
+
     // Variables not subject to change, but need to be called upon
     [HideInInspector] public Vector2 playerMovement;
     [HideInInspector] public bool inControl;
@@ -98,32 +98,26 @@ public class PlayerMovement : MonoBehaviour
 
     private void ChangeAnimator()
     {
-        if (playerRigidbody.linearVelocity.x > 0.01 || playerRigidbody.linearVelocity.x < -0.01)
+        if (playerMovement.x > 0.01 || playerMovement.x < -0.01)
         {
-            playerAnimator.SetInteger("Sprite", 1);
-            spriteRenderer.sprite = sprite[1];
-            if (playerRigidbody.linearVelocity.x > 0.01)
+            if (playerMovement.x > 0.01)
             {
                 spriteRenderer.flipX = false;
             }
-            spriteRenderer.flipX = true;
-            playerAnimator.SetBool("isMoving", true);
+            else
+            {
+                spriteRenderer.flipX = true;
+            }
+            spriteRenderer.sprite = sprite[1];
+            Debug.Log("This Sprite");
         }
-        else if (playerRigidbody.linearVelocity.y > 0.01)
+        else if (playerMovement.y > 0.01)
         {
-            playerAnimator.SetInteger("Sprite", 2);
             spriteRenderer.sprite = sprite[2];
-            playerAnimator.SetBool("isMoving", true);
         }
-        else if (playerRigidbody.linearVelocity.y < -0.01)
+        else if (playerMovement.y < -0.01)
         {
-            playerAnimator.SetInteger("Sprite", 0);
             spriteRenderer.sprite = sprite[0];
-            playerAnimator.SetBool("isMoving", true);
-        }
-        else
-        {
-            playerAnimator.SetBool("isMoving", false);
         }
     }
 }
