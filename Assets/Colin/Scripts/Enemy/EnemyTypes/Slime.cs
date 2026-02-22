@@ -2,15 +2,43 @@ using UnityEngine;
 
 public class Slime : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    GameObject player;
+    [SerializeField] EnemyController enemyController;
+    [SerializeField] EnemyMovement enemyMovement;
+
+    public int health;
+    public int stunHealth;
+    public float windUp = 1;
+    public int damage = 1;
+
+    void Awake()
     {
-        
+        enemyController.health = health;
+        enemyController.stunHealth = stunHealth;
     }
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        player = GameObject.Find("Player");
+    }
+
+    void Attack()
+    {
+        player.GetComponent<PlayerDeath>().Hit(damage);
+        player.GetComponent<PlayerMovement>().Slimed();
+        enemyMovement.canMove = false;
+        Invoke("CanMove", 3);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Attack();
+        }
+    }
+    void CanMove()
+    {
+        enemyMovement.canMove = true;
     }
 }

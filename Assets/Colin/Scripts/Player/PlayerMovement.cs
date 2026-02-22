@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public bool isSprinting;
     private float sprintTimer;
     [HideInInspector] public float playerSpeed;
+    [HideInInspector] public bool isSlimed;
+    [SerializeField] Sprite[] sprite;
 
     // Variables subject to change in inspector
     public float walkSpeed;
@@ -30,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
         if (inControl)
         {
             Movement();
+            ChangeAnimator();
         }
         if (isSprinting && sprintTimer > 0)
         {
@@ -53,27 +56,58 @@ public class PlayerMovement : MonoBehaviour
     void Movement()
     {
         transform.Translate(playerMovement * Time.deltaTime * playerSpeed);
-        /*if (playerMovement.x < 0)
-        {
-            spriteRenderer.flipX = true;
-        }
-        else if (playerMovement.x > 0)
-        {
-            spriteRenderer.flipX = false;
-        }
-        */
     }
 
     public void Sprint()
     {
-        isSprinting = !isSprinting;
-        if (playerSpeed == walkSpeed)
+        if (!isSlimed)
         {
-            playerSpeed = sprintSpeed;
+            isSprinting = !isSprinting;
+            if (playerSpeed == walkSpeed)
+            {
+                playerSpeed = sprintSpeed;
+            }
+            else
+            {
+                playerSpeed = walkSpeed;
+            }
         }
-        else
+    }
+
+    public void Slimed()
+    {
+        isSlimed = true;
+        playerSpeed = playerSpeed * 0.75f;
+        Invoke("Cleaned", 5);
+    }
+
+    private void Cleaned()
+    {
+        playerSpeed = walkSpeed;
+        isSlimed = false;
+    }
+
+    private void ChangeAnimator()
+    {
+        if (playerMovement.x > 0.3 || playerMovement.x < -0.3)
         {
-            playerSpeed = walkSpeed;
+            spriteRenderer.sprite = sprite[1];
+            if (playerMovement.x > 0.01)
+            {
+                spriteRenderer.flipX = false;
+            }
+            else
+            {
+                spriteRenderer.flipX = true;
+            }
+        }
+        else if (playerMovement.y > 0.01)
+        {
+            spriteRenderer.sprite = sprite[2];
+        }
+        else if (playerMovement.y < -0.01)
+        {
+            spriteRenderer.sprite = sprite[0];
         }
     }
 }

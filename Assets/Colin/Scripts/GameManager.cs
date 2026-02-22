@@ -1,9 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public GameManager instance;
-    private int score;
+    public int score;
+    [HideInInspector] public List<int> currentCollectables;
+    [HideInInspector] public Dictionary<string, int> collectedItems;
 
     [Header("Persistant Objects")]
     [SerializeField] GameObject[] persistantObjects;
@@ -20,6 +24,14 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
             MarkObjects();
+        }
+    }
+
+    void Update()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 7)
+        {
+            CleanAndDestroy();
         }
     }
 
@@ -41,6 +53,11 @@ public class GameManager : MonoBehaviour
             Destroy(obj);
         }
         Destroy(gameObject);
+    }
+
+    public void AddCollectable(int collectableScore)
+    {
+        currentCollectables.Add(collectableScore);
     }
 
     public void AddScore(int gainedScore)

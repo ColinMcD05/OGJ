@@ -8,6 +8,7 @@ public class EnemyVision : MonoBehaviour
     [SerializeField] EnemyMovement enemyMovement;
 
     LayerMask layerMask;
+    LayerMask playerMask;
     GameObject player;
     public float visionRange = 10;
     [Range(1,360)] public float detectionAngle = 45;
@@ -15,11 +16,13 @@ public class EnemyVision : MonoBehaviour
     void Awake()
     {
         player = GameObject.Find("Player");
+        playerMask = LayerMask.GetMask("Player");
         layerMask = LayerMask.GetMask("Player", "Wall");
     }
 
     void Update()
     {
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         if (CheckInAngle() && CheckIsNotHidden())
         {
             if(!this.gameObject.CompareTag("Dark Elf") && CheckPlayerInShadow())
@@ -37,18 +40,20 @@ public class EnemyVision : MonoBehaviour
             enemyMovement.seePlayer = false;
         }
         Debug.Log(CheckInAngle());
+        Debug.Log(CheckIsNotHidden());
     }
 
     bool CheckInAngle()
     {
-        Collider2D rangeCheck = Physics2D.OverlapCircle(transform.position, visionRange);
+        Collider2D rangeCheck = Physics2D.OverlapCircle(transform.position, visionRange, playerMask);
         if (rangeCheck != null)
         {
-            Vector2 directionToTarget = (player.transform.position - transform.position).normalized;
+            Debug.Log("Yes");
+            Vector3 directionToTarget = (player.transform.position - transform.position).normalized;
             if (rangeCheck.transform.CompareTag("Player"))
             {
                 Debug.Log("Yes");
-                if (Vector2.Angle(transform.up, directionToTarget) < detectionAngle * 0.5f)
+                if (Vector3.Angle(transform.up, directionToTarget) < detectionAngle * 0.5f)
                 {
                     return true;
                 }
@@ -97,6 +102,6 @@ public class EnemyVision : MonoBehaviour
         Transform target = player.transform;
 
         Quaternion targetRotation = Quaternion.LookRotation(transform.forward, (target.position - transform.position));
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, enemyMovement.rotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, (enemyMovement.rotationSpeed + 2)  * Time.deltaTime);
     }
 }

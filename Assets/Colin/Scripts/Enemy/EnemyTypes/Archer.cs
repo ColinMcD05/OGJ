@@ -4,6 +4,7 @@ using UnityEngine;
 public class Archer : MonoBehaviour
 {
     GameObject player;
+    [SerializeField] EnemyController enemyController;
     [SerializeField] EnemyMovement enemyMovement;
     [SerializeField] GameObject eyes;
     [SerializeField] GameObject arrowPrefab;
@@ -13,6 +14,12 @@ public class Archer : MonoBehaviour
     public float range = 5;
     public float cooldownTimer = 5;
     public float windUp = 1;
+
+    void Awake()
+    {
+        enemyController.health = health;
+        enemyController.stunHealth = stunHealth;
+    }
 
     void Start()
     {
@@ -42,6 +49,11 @@ public class Archer : MonoBehaviour
         // shoot animation
         // back to normal anitmation
         GameObject arrow = Instantiate(arrowPrefab, transform.position, eyes.transform.rotation);
+        Invoke("CanMove", 1);
+    }
+
+    void CanMove()
+    {
         enemyMovement.canMove = true;
     }
 }

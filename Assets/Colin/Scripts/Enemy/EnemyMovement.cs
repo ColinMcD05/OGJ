@@ -8,7 +8,9 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] GameObject eyes;
     private GameObject player;
-    //[SerializeField] NavMeshAgent agent;
+    [SerializeField] NavMeshAgent agent;
+    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] Sprite[] sprite;
 
     [SerializeField] Transform[] waypoints;
     public int currentWaypointTarget = 0;
@@ -25,44 +27,55 @@ public class EnemyMovement : MonoBehaviour
     private int lookDirection = 1;
     private Quaternion lookRotation;
     public bool loop;
+    private Vector3 startPostition;
+    private Quaternion originalRotation;
+    private float switchTimer = 1;
+    
 
     [HideInInspector] public bool sawPlayer;
     [HideInInspector] public bool seePlayer;
 
     void Awake()
     {
-        //agent.updateRotation = false;
-        //agent.updateUpAxis = false;
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+        agent.speed = moveSpeed;
 
         canMove = true;
         player = GameObject.Find("Player");
 
+        startPostition = transform.position;
+        originalRotation = eyes.transform.rotation;
     }
 
     private void Update()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+        //transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         if (canMove && !stunned)
         {
             if (!sawPlayer)
             {
-                Patrol();
+                Patrol(); 
+                ChangeAnimator();
             }
             else if (sawPlayer && seePlayer)
             {
                 ChasePlayer();
+                ChangeAnimator();
                 lookTime = 0;
             }
             else if (sawPlayer && !seePlayer)
             {
-                if (!AtLastKnown())
+                if (AtLastKnown())
                 {
                     GoToLastKnown();
+                    ChangeAnimator();
                     lookRotation = transform.rotation * Quaternion.Euler(0, 0, 30);
                 }
                 else
                 {
                     LookForPlayer();
+                    ChangeAnimator();
                 }
             }
         }
@@ -89,9 +102,13 @@ public class EnemyMovement : MonoBehaviour
             eyes.transform.rotation = targetRotation;
         }
 
+        if (waypoints.Length == 0 && agent.transform.position == startPostition && eyes.transform.rotation != originalRotation)
+        {
+            eyes.transform.rotation = originalRotation;
+        }
+
         if ((transform.position - target.position).sqrMagnitude < reachDistance * reachDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
             if (!loop && waypoints.Length > 1)
             {
                 if (currentWaypointTarget == waypoints.Length - 1)
@@ -109,6 +126,10 @@ public class EnemyMovement : MonoBehaviour
                 currentWaypointTarget = (currentWaypointTarget + 1) % waypoints.Length;
             }
             waitTime = Random.Range(1f, 3f);
+        }
+        else
+        {
+            agent.SetDestination(target.position);
         }
     }
 
@@ -129,7 +150,10 @@ public class EnemyMovement : MonoBehaviour
         }
         if (lookTime >= 5)
         {
-            //agent.SetDestination(waypoints[currentWaypointTarget].position);
+            if (waypoints.Length == 0)
+            {
+                agent.SetDestination(startPostition);
+            }
             sawPlayer = false;
         }
     }
@@ -138,8 +162,7 @@ public class EnemyMovement : MonoBehaviour
     {
         Transform target = player.transform;
 
-        transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
-        //agent.SetDestination(target.position);
+        agent.SetDestination(target.position);
         lastKnown = target.position;
     }
 
@@ -150,14 +173,12 @@ public class EnemyMovement : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(transform.forward, (target - transform.position));
         eyes.transform.rotation = Quaternion.Slerp(eyes.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-
-        transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
-        //agent.SetDestination(target);
+        agent.SetDestination(target);
     }
 
     bool AtLastKnown()
     {
-        return transform.position == lastKnown;
+            return agent.hasPath;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -165,14 +186,51 @@ public class EnemyMovement : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             canMove = false;
+            Invoke("CanMove", 2);
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void CanMove()
     {
-        if (collision.gameObject.CompareTag("Player"))
+        canMove = true;
+    }
+
+    private void ChangeAnimator()
+    {
+        if (!gameObject.CompareTag("Slime"))
         {
-            canMove = true;
+            if (agent.velocity.x > 0.3 || agent.velocity.x < -0.3)
+            {
+                spriteRenderer.sprite = sprite[1];
+                if (agent.velocity.x > 0)
+                {
+                    spriteRenderer.flipX = false;
+                    return;
+                }
+                spriteRenderer.flipX = true;
+            }
+            else if (agent.velocity.y > 0.001)
+            {
+                spriteRenderer.sprite = sprite[2];
+            }
+            else if (agent.velocity.y < -0.001)
+            {
+                spriteRenderer.sprite = sprite[0];
+            }
+        }
+        else
+        {
+            switchTimer -= Time.deltaTime;
+            if (switchTimer <= 0 && spriteRenderer == sprite[0])
+            {
+                spriteRenderer.sprite = sprite[1];
+                switchTimer = 1;
+            }
+            else if (switchTimer <= 0 && spriteRenderer == sprite[1])
+            {
+                spriteRenderer.sprite = sprite[0];
+                switchTimer = 1;
+            }
         }
     }
 }
