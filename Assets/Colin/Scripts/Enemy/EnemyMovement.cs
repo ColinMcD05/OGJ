@@ -9,7 +9,6 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] GameObject eyes;
     private GameObject player;
     [SerializeField] NavMeshAgent agent;
-    [SerializeField] Animator enemyAnimator;
     [SerializeField] SpriteRenderer spriteRenderer;
 
     [SerializeField] Transform[] waypoints;
@@ -198,16 +197,20 @@ public class EnemyMovement : MonoBehaviour
     {
         if (agent.velocity.x > 0.01 || agent.velocity.x < -0.01)
         {
+<<<<<<< Updated upstream
             enemyAnimator.SetInteger("Sprite", 1);
+=======
+            spriteRenderer.sprite = sprite[1];
+>>>>>>> Stashed changes
             if (agent.velocity.x > 0.01)
             {
                 spriteRenderer.flipX = false;
             }
             spriteRenderer.flipX = true;
-            enemyAnimator.SetBool("isMoving", true);
         }
         else if (agent.velocity.y > 0.01)
         {
+<<<<<<< Updated upstream
             enemyAnimator.SetInteger("Sprite", 2);
             enemyAnimator.SetBool("isMoving", true);
         }
@@ -219,6 +222,13 @@ public class EnemyMovement : MonoBehaviour
         else
         {
             enemyAnimator.SetBool("isMoving", false);
+=======
+            spriteRenderer.sprite = sprite[2];
+        }
+        else if (agent.velocity.y < -0.01)
+        {
+            spriteRenderer.sprite = sprite[0];
+>>>>>>> Stashed changes
         }
     }
 }
