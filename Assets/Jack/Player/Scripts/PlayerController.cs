@@ -7,6 +7,11 @@ namespace Jack
 {
     public class PlayerController : MonoBehaviour
     {
+        public int lives;
+        public int maxLives;
+        public bool inShadow;
+        public bool isCaught=false;
+        public event Action<bool> onCaught;
         [HideInInspector] public Dictionary<TempWeapon.Temporary,List<TempWeapon>> weaponsDict;
             
         [HideInInspector] public TempWeapon.Temporary activeWeaponIdx = 0;
@@ -40,7 +45,7 @@ namespace Jack
                 && !col.CompareTag("Player"))
             {
                 weaponsDict[temp.tempType].Add(temp); // Initializes List
-                if(activeWeapon==null)
+                if(activeWeapon!=null)
                     SwitchTempWeapon(temp.tempType);
             }
         }
