@@ -185,8 +185,9 @@ public class EnemyMovement : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            agent.isStopped = true;
             canMove = false;
-            Invoke("CanMove", 2);
+            Invoke("CanMove", 3);
         }
     }
 

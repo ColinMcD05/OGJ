@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Collections;
 using System;
 
-namespace Jack
-{
     public class PlayerController : MonoBehaviour
     {
         public int lives;
@@ -20,13 +18,13 @@ namespace Jack
 
         void OnEnable()
         {
-            PlayerInputScript.onTempToggle += SwitchTempWeapon;
+            PlayerInput.onTempToggle += SwitchTempWeapon;
             EnemyVision.enemySees += OnCaught;
         }
 
         void OnDisable()
         {
-            PlayerInputScript.onTempToggle -= SwitchTempWeapon;
+            PlayerInput.onTempToggle -= SwitchTempWeapon;
             EnemyVision.enemySees -= OnCaught;
         }
             
@@ -79,4 +77,3 @@ namespace Jack
             onCaught?.Invoke(seen);
         }
     }
-}

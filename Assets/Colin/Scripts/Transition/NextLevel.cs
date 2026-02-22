@@ -10,6 +10,7 @@ public class NextLevel : MonoBehaviour
     bool canPrint = false;
     int gainedScore;
     float amountAdded;
+    GameObject player;
     PlayerController playerController;
 
     void Awake()
@@ -30,6 +31,7 @@ public class NextLevel : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             playerController = collision.gameObject.GetComponent<PlayerController>();
+            player = collision.gameObject;
             collision.gameObject.GetComponent<PlayerMovement>().enabled = false;
             Destroy(GameObject.Find("Enemies"));
             CalculateScore();
@@ -38,8 +40,9 @@ public class NextLevel : MonoBehaviour
 
     void ChangeLevel()
     {
+        player.transform.position = new Vector3(0, 0, 0);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        GameObject.Find("Player").gameObject.GetComponent<PlayerMovement>().enabled = false;
+        GameObject.Find("Player").gameObject.GetComponent<PlayerMovement>().enabled = true;
     }
 
     void CalculateScore()
@@ -49,13 +52,18 @@ public class NextLevel : MonoBehaviour
             gainedScore += gameManager.currentCollectables[0];
             gameManager.currentCollectables.RemoveAt(0);
         }
-        /* Gain score based on items
-        foreach (int collectabel in gameManager.)
-        {
 
+        Invoke("ChangeLevel", 1);
+
+        foreach (TempWeapon.Temporary weaponType in playerController.weaponsDict.Keys)
+        {
+            if ((int)weaponType < 4)
+            {
+                gainedScore += playerController.weaponsDict[weaponType + 1].Count * 100 * ((int)weaponType);
+                playerController.weaponsDict[weaponType + 1].Clear();
+            }
         }
         canPrint = true;
-        */
     }
 
     void PrintScore()

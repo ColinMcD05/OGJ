@@ -14,6 +14,7 @@ public class EnemyVision : MonoBehaviour
     public float visionRange = 10;
     public static event Action<bool> enemySees;
     [Range(1,360)] public float detectionAngle = 45;
+    private PlayerController playerController;
 
     void Awake()
     {

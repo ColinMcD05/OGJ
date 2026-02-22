@@ -151,4 +151,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e9b29a8dbbf564ebdd95634d591c2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shadow
-  fade: 0
+  fade: 0.4
