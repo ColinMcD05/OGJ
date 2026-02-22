@@ -189,6 +189,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
   health: 0
   stunHealth: 0
+  audioSource: {fileID: -7633340650794478519}
+  getHit: {fileID: 8300000, guid: 80a48ace234f8b048831b3c9ec056e3c, type: 3}
 --- !u!114 &356124919322549667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,7 +292,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

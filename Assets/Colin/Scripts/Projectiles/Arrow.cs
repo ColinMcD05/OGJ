@@ -2,9 +2,16 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
+    [SerializeField] AudioSource aduioSource;
+    [SerializeField] AudioClip shot;
     [HideInInspector] public Vector3 targetPosition;
     public int speed = 5;
     public int damage;
+
+    void Awake()
+    {
+        aduioSource.PlayOneShot(shot, 0.5f);
+    }
 
     void Update()
     {
