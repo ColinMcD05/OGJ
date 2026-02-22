@@ -83,6 +83,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Slimed()
     {
+        isSlimed = true;
         playerSpeed = playerSpeed * 0.75f;
         Invoke("Cleaned", 5);
     }
