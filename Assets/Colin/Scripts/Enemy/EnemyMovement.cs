@@ -185,9 +185,6 @@ public class EnemyMovement : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            Vector3 direction = (transform.position - collision.transform.position).normalized;
-
-            collision.gameObject.GetComponent<Rigidbody>().AddForce(direction * 5);
             canMove = false;
             Invoke("CanMove", 2);
         }
