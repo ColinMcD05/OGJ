@@ -13,7 +13,7 @@ public abstract class Weapon : MonoBehaviour
 
     // Weapon Data
     public int _damage;
-    public float _stun;
+    public int _stun;
     public float _cooldown;
     public string _name;
     public int _rank;

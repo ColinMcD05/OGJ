@@ -274,7 +274,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -301,14 +301,14 @@ MonoBehaviour:
   sr: {fileID: 0}
   rb: {fileID: 0}
   bc: {fileID: 0}
-  _damage: 20
+  _damage: 0
   _stun: 5
   _cooldown: 0.5
   _name: Basic Axe
   _rank: 1
   _id: 0
   _durability: 15
-  tempType: 1
+  tempType: 2
 --- !u!1 &182480663
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +464,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -491,7 +491,7 @@ MonoBehaviour:
   sr: {fileID: 0}
   rb: {fileID: 0}
   bc: {fileID: 0}
-  _damage: 10
+  _damage: 0
   _stun: 5
   _cooldown: 0.5
   _name: Basic Sword
@@ -762,7 +762,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -789,14 +789,14 @@ MonoBehaviour:
   sr: {fileID: 0}
   rb: {fileID: 0}
   bc: {fileID: 0}
-  _damage: 5
+  _damage: 0
   _stun: 3
   _cooldown: 0.5
   _name: Basic Bow
   _rank: 1
   _id: 0
   _durability: 5
-  tempType: 2
+  tempType: 1
 --- !u!1 &494513792
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,6 +888,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e23367548fb2b4e8b115c5b5ff63fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Jack.PlayerController
+  lives: 0
+  maxLives: 0
+  inShadow: 0
+  isCaught: 0
   activeWeaponIdx: 0
 --- !u!50 &494513797
 Rigidbody2D:
@@ -1110,7 +1114,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1183,7 +1187,7 @@ MonoBehaviour:
   sr: {fileID: 0}
   rb: {fileID: 0}
   bc: {fileID: 0}
-  _damage: 1
+  _damage: 0
   _stun: 10
   _cooldown: 0
   _name: Basic Club
@@ -1258,19 +1262,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 548637669}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eec7bfe793cc6b346a32b4ccfaa38ac2, type: 3}
+  m_Script: {fileID: 11500000, guid: c1cb10b88585a2b4085a44d1faa89cd5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PermWeapon
+  m_EditorClassIdentifier: Assembly-CSharp::TempWeapon
   sr: {fileID: 0}
   rb: {fileID: 0}
   bc: {fileID: 0}
   _damage: 1
-  _stun: 10
+  _stun: 5
   _cooldown: 0.5
   _name: Basic Club
   _rank: 1
   _id: 0
-  permType: 0
+  _durability: 15
+  tempType: 0
 --- !u!1 &979123525
 GameObject:
   m_ObjectHideFlags: 0
@@ -1807,6 +1812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2099040032}
   - component: {fileID: 2099040033}
+  - component: {fileID: 2099040034}
   m_Layer: 0
   m_Name: WeaponContainer
   m_TagString: Player
@@ -1842,12 +1848,108 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d12e2e23a91ae24bb68a3600c9832de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Jack.WeaponController
-  swordAudio: {fileID: 0}
-  bowAudio: {fileID: 0}
-  axeAudio: {fileID: 0}
-  clubAudio: {fileID: 0}
+  swordAudio: {fileID: 8300000, guid: 67e02b20fa5aac34496994478b37fb41, type: 3}
+  bowAudio: {fileID: 8300000, guid: 0e775907f5e959548a54dc3dc428e604, type: 3}
+  clubAudio: {fileID: 8300000, guid: 7b843e6f5de60f04e8dc1909abce8531, type: 3}
   hitBox: {fileID: 1941794932}
   cooldown: 0.5
+--- !u!82 &2099040034
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099040031}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
