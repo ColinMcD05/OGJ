@@ -159,8 +159,8 @@ MonoBehaviour:
   enemyController: {fileID: 179975363837017187}
   enemyMovement: {fileID: 2852082646579760810}
   eyes: {fileID: 8116815900917738926}
-  health: 0
-  stunHealth: 0
+  health: 1
+  stunHealth: 1
   range: 5
   cooldownTimer: 5
   windUp: 1

@@ -203,8 +203,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Slime
   enemyController: {fileID: 8084454582593157802}
   enemyMovement: {fileID: 2900180743477925439}
-  health: 0
-  stunHealth: 0
+  health: 1
+  stunHealth: 1
   windUp: 1
   damage: 1
 --- !u!82 &31210254364891342

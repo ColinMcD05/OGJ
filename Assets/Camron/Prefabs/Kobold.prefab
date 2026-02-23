@@ -205,9 +205,9 @@ MonoBehaviour:
   enemyController: {fileID: 7310993867323397840}
   enemyMovement: {fileID: 4189482716335137205}
   eyes: {fileID: 2051775781560879017}
-  health: 0
-  stunHealth: 0
-  windUp: 1
+  health: 1
+  stunHealth: 1
+  windUp: 2
   damage: 1
 --- !u!82 &-8374740863376859087
 AudioSource:

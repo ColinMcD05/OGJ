@@ -207,8 +207,8 @@ MonoBehaviour:
   enemyMovement: {fileID: 4715419750218965148}
   eyes: {fileID: 339823372060172670}
   arrowPrefab: {fileID: 2198055411135381958, guid: e8af2788ef0e51142a16f50a21fe4375, type: 3}
-  health: 0
-  stunHealth: 0
+  health: 1
+  stunHealth: 1
   range: 5
   cooldownTimer: 5
   windUp: 1

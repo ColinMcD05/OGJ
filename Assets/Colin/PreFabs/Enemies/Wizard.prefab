@@ -209,8 +209,8 @@ MonoBehaviour:
   magicMisslePrefab: {fileID: 167081222900866053, guid: a73a6137a2178d544829cc8b9233ff15, type: 3}
   audioSource: {fileID: 2720954713577521520}
   magic: {fileID: 8300000, guid: 158b8e2d59fbfed49ae85f544405a111, type: 3}
-  health: 0
-  stunHealth: 0
+  health: 1
+  stunHealth: 1
   range: 10
   cooldownTimer: 5
   windUp: 1
