@@ -194,6 +194,7 @@ public class EnemyMovement : MonoBehaviour
     private void CanMove()
     {
         canMove = true;
+        agent.isStopped = false;
     }
 
     private void ChangeAnimator()
