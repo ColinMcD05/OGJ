@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Archer : MonoBehaviour
 {
@@ -48,11 +49,13 @@ public class Archer : MonoBehaviour
         // shoot animation
         // back to normal anitmation
         GameObject arrow = Instantiate(arrowPrefab, transform.position, eyes.transform.rotation);
+        GetComponent<NavMeshAgent>().isStopped = true;
         Invoke("CanMove", 1);
     }
 
     void CanMove()
     {
         enemyMovement.canMove = true;
+        GetComponent<NavMeshAgent>().isStopped = true;
     }
 }

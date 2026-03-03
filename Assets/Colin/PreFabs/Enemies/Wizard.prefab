@@ -209,8 +209,8 @@ MonoBehaviour:
   magicMisslePrefab: {fileID: 167081222900866053, guid: a73a6137a2178d544829cc8b9233ff15, type: 3}
   audioSource: {fileID: 2720954713577521520}
   magic: {fileID: 8300000, guid: 158b8e2d59fbfed49ae85f544405a111, type: 3}
-  health: 0
-  stunHealth: 0
+  health: 1
+  stunHealth: 1
   range: 10
   cooldownTimer: 5
   windUp: 1
@@ -345,7 +345,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.000000029802322, y: 0.0055042654}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -355,7 +355,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.22854427, y: 0.2979829}
   m_EdgeRadius: 0
 --- !u!195 &6657173881320223625
 NavMeshAgent:
