@@ -53,7 +53,7 @@ public class EnemyVision : MonoBehaviour
         }
         Debug.Log(CheckInAngle());
         Debug.Log(CheckIsNotHidden());
-        DrawFOV();
+       // DrawFOV();
     }
 
     bool CheckInAngle()
@@ -90,7 +90,7 @@ public class EnemyVision : MonoBehaviour
         return player.GetComponent<PlayerController>().inShadow;
     }
 
-    void DrawFOV()
+    /*void DrawFOV()
     {
         int stepCount = Mathf.RoundToInt(detectionAngle * meshRelosution);
         float stepAngleSize = detectionAngle / stepCount;
@@ -140,7 +140,7 @@ public class EnemyVision : MonoBehaviour
             Debug.Log("Debug");
             return new ViewCastInfo(false, transform.position + direction * visionRange, visionRange, globalAngle);
         }
-    }
+    }*/
 
     private void OnDrawGizmos()
     {
@@ -170,7 +170,7 @@ public class EnemyVision : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, (enemyMovement.rotationSpeed + 2)  * Time.deltaTime);
     }
 
-    public struct ViewCastInfo
+    /*public struct ViewCastInfo
     {
         public bool hit;
         public Vector3 point;
@@ -185,4 +185,5 @@ public class EnemyVision : MonoBehaviour
             this.angle = angle;
         }
     }
+    */
 }
